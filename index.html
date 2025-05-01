@@ -12,38 +12,83 @@
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header {
       background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
       color: #fff;
       padding: 60px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
     }
+    .header-content {
+      max-width: 600px;
+      text-align: left;
+    }
     header h1 {
       margin-bottom: 10px;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       animation: fadeIn 1s ease-in;
     }
     header p {
       margin: 10px 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+    }
+    header .social-links {
+      margin: 20px 0;
     }
     header .social-links a {
       color: #fff;
       margin: 0 10px;
       font-size: 1.5rem;
-      transition: color 0.3s;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     header .social-links a:hover {
       color: #60a5fa;
+      transform: scale(1.2);
     }
     .x-icon, .leetcode-icon {
       width: 1.5rem;
       height: 1.5rem;
       vertical-align: middle;
+    }
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 40px;
+      border: 4px solid #60a5fa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+    }
+    .cta-buttons {
+      margin-top: 20px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px 10px 0 0;
+      background-color: #60a5fa;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .cta-button:hover {
+      background-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+      animation: none;
     }
     .container {
       max-width: 1100px;
@@ -56,10 +101,26 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
     }
     section:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    #summary {
+      background: linear-gradient(180deg, #f9fafb 0%, #fff 100%);
+      border: 2px solid;
+      border-image: linear-gradient(to right, #60a5fa, #3b82f6) 1;
+      padding: 35px;
+    }
+    #summary h2::before {
+      content: "\f2bd";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #60a5fa;
+      margin-right: 10px;
     }
     h2 {
       color: #1f2937;
@@ -82,6 +143,41 @@
       margin-bottom: 8px;
       color: #2c3e50;
       font-size: 1.4rem;
+      transition: color 0.3s ease;
+    }
+    .item h3:hover {
+      color: #60a5fa;
+    }
+    .project-tags {
+      margin: 10px 0;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.8s ease forwards 0.3s;
+    }
+    .project-tag {
+      display: inline-block;
+      background-color: #e5e7eb;
+      color: #2c3e50;
+      padding: 5px 10px;
+      margin: 0 5px 5px 0;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .project-tag:hover {
+      background-color: #d1d5db;
+      transform: scale(1.1);
+    }
+    .tech-stack {
+      margin: 10px 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.8s ease forwards 0.5s;
+    }
+    .tech-stack strong {
+      color: #2c3e50;
     }
     .project-link {
       text-align: right;
@@ -91,9 +187,123 @@
     .project-link a {
       color: #60a5fa;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     .project-link a:hover {
+      color: #3b82f6;
       text-decoration: underline;
+    }
+    .view-all-projects {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .view-all-projects a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #60a5fa;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .view-all-projects a:hover {
+      background-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+    }
+    .recommendation-card {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .recommendation-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .recommendation-card h3 {
+      margin: 0 0 5px;
+      color: #2c3e50;
+      font-size: 1.2rem;
+    }
+    .recommendation-card p {
+      margin: 5px 0;
+      color: #4b5563;
+    }
+    .recommendation-card blockquote {
+      font-style: italic;
+      color: #374151;
+      margin: 10px 0 0;
+      padding-left: 20px;
+      border-left: 3px solid #60a5fa;
+    }
+    .work-together {
+      background: #f9fafb;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .work-together h2 {
+      margin-bottom: 15px;
+    }
+    .work-together p {
+      margin: 0 auto 20px;
+      max-width: 600px;
+      color: #374151;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .work-together a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #60a5fa;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .work-together a:hover {
+      background-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+      animation: none;
+    }
+    .work-together a span {
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+    .work-together a:hover span {
+      opacity: 0;
+    }
+    .work-together a::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+      z-index: 0;
+    }
+    .work-together a:hover::after {
+      width: 150px;
+      height: 150px;
     }
     .education-item {
       display: flex;
@@ -102,15 +312,20 @@
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 15px;
-      transition: background 0.3s;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
     .education-item:hover {
       background: #e5e7eb;
+      transform: translateY(-3px);
     }
     .education-item i {
       font-size: 2rem;
       color: #60a5fa;
       margin-right: 20px;
+      transition: color 0.3s ease;
+    }
+    .education-item:hover i {
+      color: #3b82f6;
     }
     .education-details h3 {
       margin: 0 0 5px;
@@ -132,44 +347,80 @@
       text-decoration: none;
     }
     a:hover {
-      text-decoration: underline;
+      color: #3b82f6;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-content {
+        text-align: center;
+      }
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
+      .profile-photo {
+        margin: 20px 0 0;
+        width: 150px;
+        height: 150px;
+      }
       section { padding: 20px; }
+      #summary { padding: 25px; }
       .education-item { flex-direction: column; align-items: flex-start; }
       .education-item i { margin-bottom: 10px; }
       header .social-links a { margin: 0 8px; font-size: 1.2rem; }
       .project-link { text-align: left; }
+      .recommendation-card { padding: 15px; }
+      .work-together { padding: 30px 15px; }
+      .work-together p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Shaheen Nabi</h1>
-  <p>Applied AI Engineer | Reinforcement Learning & Agentic Systems | LLMs & RAG | Fine-Tuning | Cloud & System Design | Open-Source Contributor</p>
-  <div class="social-links">
-    <a href="mailto:ishaheennabi333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/shaheennabi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face"><i class="fas fa-robot"></i></a>
-    <a href="https://twitter.com/ShaheenNabi1" target="_blank" title="Twitter/X">
-      <svg class="x-icon" viewBox="0 0 24 24" fill="#fff">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-      </svg>
-    </a>
-    <a href="https://leetcode.com/u/ishaheen333/" target="_blank" title="LeetCode">
-      <svg class="leetcode-icon" viewBox="0 0 24 24" fill="#fff">
-        <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L.275 12.575a1.374 1.374 0 0 0 0 1.875l12.247 12.112a1.374 1.374 0 0 0 1.925 0l12.247-12.112a1.374 1.374 0 0 0 0-1.875L14.447.438a1.374 1.374 0 0 0-.964-.438zM8.01 16.94a.92.92 0 0 1-.652-.275l-2.726-2.726a.916.916 0 0 1 1.3-1.3l2.078 2.081 5.67-5.67a.916.916 0 0 1 1.3 1.3l-6.32 6.317a.92.92 0 0 1-.65.273z"/>
-      </svg>
-    </a>
+  <div class="header-content">
+    <h1>Shaheen Nabi</h1>
+    <p>Applied AI Engineer | Reinforcement Learning & Agentic Systems | LLMs & RAG | Fine-Tuning | Cloud & System Design | Open-Source Contributor</p>
+    <div class="social-links">
+      <a href="mailto:ishaheennabi333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/shaheennabi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face"><i class="fas fa-robot"></i></a>
+      <a href="https://twitter.com/ShaheenNabi1" target="_blank" title="Twitter/X">
+        <svg class="x-icon" viewBox="0 0 24 24" fill="#fff">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://leetcode.com/u/ishaheen333/" target="_blank" title="LeetCode">
+        <svg class="leetcode-icon" viewBox="0 0 24 24" fill="#fff">
+          <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L.275 12.575a1.374 1.374 0 0 0 0 1.875l12.247 12.112a1.374 1.374 0 0 0 1.925 0l12.247-12.112a1.374 1.374 0 0 0 0-1.875L14.447.438a1.374 1.374 0 0 0-.964-.438zM8.01 16.94a.92.92 0 0 1-.652-.275l-2.726-2.726a.916.916 0 0 1 1.3-1.3l2.078 2.081 5.67-5.67a.916.916 0 0 1 1.3 1.3l-6.32 6.317a.92.92 0 0 1-.65.273z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="cta-buttons">
+      <a href="https://github.com/shaheennabi" class="cta-button" target="_blank">View My Work</a>
+      <a href="files/resume.pdf" class="cta-button" download>Download My Resume</a>
+    </div>
   </div>
+  <img src="path/to/your-photo.jpg" alt="Shaheen Nabi" class="profile-photo">
 </header>
 
 <div class="container">
@@ -226,7 +477,17 @@
     <h2>Projects</h2>
     <div class="item">
       <h3>🌾 LeafLogic Multi-AI Agents Project</h3>
-      <p><strong>Jan 2025 - Mar 2025</strong></panus, India</p>
+      <p><strong>Jan 2025 - Mar 2025</strong></p>
+      <div class="project-tags">
+        <span class="project-tag">Computer Vision</span>
+        <span class="project-tag">Agentic AI</span>
+        <span class="project-tag">Agriculture</span>
+        <span class="project-tag">Cloud Computing</span>
+        <span class="project-tag">YOLO</span>
+        <span class="project-tag">Multi-Agent Systems</span>
+        <span class="project-tag">Scalable Infrastructure</span>
+        <span class="project-tag">Generative AI</span>
+      </div>
       <ul>
         <li>Developed a production-ready, fully automated AI system capable of identifying 100+ plant and crop species with a one-click solution, ensuring fast and efficient detection.</li>
         <li>Designed and implemented a high-performance object detection pipeline leveraging YOLO, great for real-world agricultural applications.</li>
@@ -238,6 +499,7 @@
         <li>Ensured modularity and scalability, allowing easy expansion to support additional crop species and agricultural use cases in the future.</li>
         <li>Enabled customers to receive their summarized reports directly via email by entering their email address on the UI, ensuring a seamless and convenient user experience.</li>
       </ul>
+      <p class="tech-stack"><strong>Tech Stack:</strong> Python, PyTorch, Jenkins, AWS, TaskFlowAI, OpenAI, SerperAPI, A100 GPUs, Hugging Face</p>
       <div class="project-link">
         <a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
       </div>
@@ -245,6 +507,16 @@
     <div class="item">
       <h3>🌍 TripPlanner Multi-AI Agents Project</h3>
       <p><strong>Dec 2024 - Jan 2025</strong></p>
+      <div class="project-tags">
+        <span class="project-tag">Agentic AI</span>
+        <span class="project-tag">NLP</span>
+        <span class="project-tag">Travel Tech</span>
+        <span class="project-tag">Cloud Computing</span>
+        <span class="project-tag">LangChain</span>
+        <span class="project-tag">Personalization</span>
+        <span class="project-tag">Real-Time Data</span>
+        <span class="project-tag">Streamlit UI</span>
+      </div>
       <ul>
         <li>Developed an intelligent travel assistant integrating three AI-driven agents to automate and optimize the travel planning experience.</li>
         <li>Web Research Agent: Gathers comprehensive destination insights, including local attractions, events, weather updates, and essential travel information.</li>
@@ -254,6 +526,7 @@
         <li>Built with modularity and scalability, allowing easy integration with additional travel services, AI enhancements, and real-time data sources.</li>
         <li>Optimized for travel enthusiasts, business professionals, and frequent flyers, providing an AI-powered solution for hassle-free and well-organized trips.</li>
       </ul>
+      <p class="tech-stack"><strong>Tech Stack:</strong> Python, TaskFlowAI, OpenAI, GitHub Actions, ECR, EC2, Streamlit, SerperAPI</p>
       <div class="project-link">
         <a href="https://github.com/shaheennabi/Production-Ready-TripPlanner-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
       </div>
@@ -261,6 +534,16 @@
     <div class="item">
       <h3>🧠 Instruction Fine-Tuning of Meta LLaMA 3.2 3B</h3>
       <p><strong>Nov 2024 - Dec 2024</strong></p>
+      <div class="project-tags">
+        <span class="project-tag">NLP</span>
+        <span class="project-tag">Fine-Tuning</span>
+        <span class="project-tag">Regional Language</span>
+        <span class="project-tag">Open Source</span>
+        <span class="project-tag">LoRA</span>
+        <span class="project-tag">Kannada NLP</span>
+        <span class="project-tag">Model Optimization</span>
+        <span class="project-tag">Open-Source Contribution</span>
+      </div>
       <ul>
         <li>Fine-tuned the Meta LLaMA 3.2-3B Instruct model using LoRA (Low-Rank Adaptation) and 4-bit quantization, enhancing its ability to generate context-aware responses in Kannada.</li>
         <li>Focused on improving the model’s proficiency in understanding and generating highly relevant, instruction-following responses in conversational inputs.</li>
@@ -269,9 +552,13 @@
         <li>Developed using the Unsloth framework and trained on Google Colab Tesla T4 GPU, ensuring an efficient fine-tuning process.</li>
         <li>Merged the base model and fine-tuned model into 16-bit floating point (FP16) for optimized deployment and inference.</li>
       </ul>
+      <p class="tech-stack"><strong>Tech Stack:</strong> Python, Unsloth, QLoRA, Instruction Fine-Tuning, SFT, Hugging Face, Transformers, TRL, Quantization, AWS</p>
       <div class="project-link">
         <a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">View on GitHub</a>
       </div>
+    </div>
+    <div class="view-all-projects">
+      <a href="#projects">View All Projects</a>
     </div>
   </section>
 
@@ -279,11 +566,11 @@
     <h2>Skills</h2>
     <ul>
       <li><strong>Programming & Tools:</strong> Python, SQL, Linux, Git, Docker, Data Structures & Algorithms, Databases, <a href="https://leetcode.com/u/ishaheen333/" target="_blank">LeetCode</a></li>
-      <li><strong>Machine Learning & AI:</strong> Deep Learning, Computer Vision, Natural Language Processing, Large Language Models, Transformer Models, Diffusion Models, Deep Reinforcement Learning, Multi-agent Systems, Quantization, Time Series Analysis, Generative AI, MLOps, LLMOps, RAG, LoRA</li>
-      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, FAISS, MLflow, FastAPI</li>
+      <li><strong>Machine Learning & AI:</strong> Deep Learning, Computer Vision, Natural Language Processing, Large Language Models, Transformer Models, Diffusion Models, Deep Reinforcement Learning, Multi-agent Systems, Quantization, Time Series Analysis, Generative AI, MLOps, LLMOps, RAG, LoRA, QLoRA, SFT, Instruction Fine-Tuning</li>
+      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, Transformers, TRL, FAISS, MLflow, FastAPI, Streamlit</li>
       <li><strong>DevOps & CI/CD:</strong> DevOps, Continuous Integration/Continuous Delivery, Jenkins, Kubernetes, GitHub Actions, DVC, Airflow</li>
-      <li><strong>Cloud & Infrastructure:</strong> AWS (S3, EC2, ECR, SageMaker), Microsoft Azure, System Designing, Big Data</li>
-      <li><strong>Other:</strong> Start-up Leadership, Statistics, Probability, APIs</li>
+      <li><strong>Cloud & Infrastructure:</strong> AWS (S3, EC2, ECR, SageMaker), Microsoft Azure, System Designing, Big Data, NVIDIA A100 GPUs, Google Colab (Tesla T4)</li>
+      <li><strong>Other:</strong> Start-up Leadership, Statistics, Probability, APIs, TaskFlowAI, OpenAI, SerperAPI</li>
     </ul>
   </section>
 
@@ -344,6 +631,33 @@
         <li>Contributed to Lasso Pacific’s 2M+ annual visitors with beginner-friendly AI and data science content.</li>
       </ul>
     </div>
+  </section>
+
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <div class="recommendation-card">
+      <h3>Izhar Ashiq</h3>
+      <p><strong>January 2, 2025</strong> | Worked with Shaheen on the same team</p>
+      <blockquote>
+        I had the privilege of working with Shaheen Nabi on cutting-edge AI projects tailored for direct deployment to our U.S. customers. As a team lead, Shaheen showcased exceptional leadership, combining technical expertise with strategic acumen in marketing and branding. His remarkable work in successfully branding Lasso Pacific is a testament to his visionary approach.
+        Even under budget constraints, Shaheen motivated the team to maximize resources and maintain a focus on continuous improvement. His dedication, problem-solving skills, and collaborative mindset were key to transforming our projects into production-ready solutions.
+        I highly recommend Shaheen Nabi as a visionary data scientist and a dynamic leader who excels in delivering impactful AI solutions across diverse challenges.
+      </blockquote>
+    </div>
+    <div class="recommendation-card">
+      <h3>Rajahat Nabi</h3>
+      <p><strong>December 28, 2024</strong> | Worked with Shaheen on the same team</p>
+      <blockquote>
+        He was deeply passionate about the problem we aimed to solve—making AI and autonomous vehicle education accessible and affordable for people worldwide. His dedication stood out as he worked tirelessly to bring our product to market, demonstrating a deep understanding of branding and strategy, as seen in the way he established Lasso Pacific. He even took the initiative to offer free educational materials to some individuals, ensuring broader access.
+        We also collaborated on cybersecurity practices, where his technical skills and proactive mindset shone. I highly recommend him as a passionate developer, a visionary thinker, and someone with a talent for creating impactful products.
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="work-together" class="work-together">
+    <h2>Let's Work Together</h2>
+    <p>I am always excited to explore new opportunities, collaborate on impactful projects, or just talk tech. Feel free to reach out if you think we can build something great together.</p>
+    <a href="mailto:ishaheennabi333@gmail.com"><span>Get in Touch</span></a>
   </section>
 
 </div>

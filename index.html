@@ -1,245 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaheen Nabi - Portfolio</title>
-    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@0.0.2/icons/uil-star.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .header {
-            background: linear-gradient(135deg, #1e90ff, #00bfff, #87cefa);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
-        .header p {
-            font-size: 1.5rem;
-        }
-        .header .location {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        .header .location img {
-            width: 20px;
-            height: 20px;
-            margin-right: 0.5rem;
-        }
-        .social-links {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .social-links a {
-            color: white;
-            margin: 0 0.5rem;
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-        .social-links a:hover {
-            color: #ffdd57;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            margin-top: 0;
-            font-size: 2rem;
-            color: #1e90ff; /* Blue color for headings */
-        }
-        .section p {
-            font-size: 1.1rem;
-            font-family: 'Roboto', sans-serif;
-        }
-        .skills, .languages {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .skill, .language {
-            background-color: #d1d5db;
-            color: #1f2937;
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        .languages {
-            justify-content: center;
-        }
-        .experience, .education {
-            margin-bottom: 1.5rem;
-        }
-        .experience p, .education p {
-            margin: 0.5rem 0;
-        }
-        .experience h3, .education h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #333;
-        }
-        .experience h4, .education h4 {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        .experience span, .education span {
-            display: block;
-            font-size: 1rem;
-            color: #888;
-        }
-        .footer {
-            background-color: #282c34;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-        }
-        .footer .contact, .footer .rights {
-            margin-top: 1rem;
-        }
-        .footer .contact a, .footer .rights {
-            color: #61dafb;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .footer .contact a:hover {
-            text-decoration: underline;
-        }
-        .footer .rights {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shaheen Nabi | Applied AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 3rem;
+      font-weight: 700;
+      animation: fadeIn 1s ease-in;
+    }
+    header p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+    header .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    header .social-links a:hover {
+      color: #60a5fa;
+    }
+    .x-icon, .leetcode-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      vertical-align: middle;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+    h2 {
+      color: #1f2937;
+      border-bottom: 3px solid #60a5fa;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .item {
+      margin-bottom: 25px;
+    }
+    .item h3 {
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-size: 1.4rem;
+    }
+    .item h3 a {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+    .item h3 a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    .education-item {
+      display: flex;
+      align-items: center;
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      transition: background 0.3s;
+    }
+    .education-item:hover {
+      background: #e5e7eb;
+    }
+    .education-item i {
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-right: 20px;
+    }
+    .education-details h3 {
+      margin: 0 0 5px;
+      font-size: 1.3rem;
+    }
+    .education-details p {
+      margin: 5px 0;
+      color: #4b5563;
+    }
+    footer {
+      background: #1f2937;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      section { padding: 20px; }
+      .education-item { flex-direction: column; align-items: flex-start; }
+      .education-item i { margin-bottom: 10px; }
+      header .social-links a { margin: 0 8px; font-size: 1.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Shaheen Nabi</h1>
-        <p>Data Science Aficionado <p>| Machine Learning & AI | Reinforcement Learning & LLM Agents Around Me | Ready to Build</p></p>
-        <div class="location">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location">
-            <span>Bengaluru, Karnataka</span>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/shaheennabi" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://x.com/shaheennabi1" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/x.png" alt="X"></a> <!-- Updated X logo -->
-        </div>
+
+<header>
+  <h1>Shaheen Nabi</h1>
+  <p>Applied AI Engineer | Reinforcement Learning & Agentic Systems | LLMs & RAG | Fine-Tuning | Cloud & System Design | Open-Source Contributor</p>
+  <div class="social-links">
+    <a href="mailto:ishaheennabi333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/shaheennabi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face"><i class="fas fa-robot"></i></a>
+    <a href="https://twitter.com/ShaheenNabi1" target="_blank" title="Twitter/X">
+      <svg class="x-icon" viewBox="0 0 24 24" fill="#fff">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="https://leetcode.com/u/ishaheen333/" target="_blank" title="LeetCode">
+      <svg class="leetcode-icon" viewBox="0 0 24 24" fill="#fff">
+        <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L.275 12.575a1.374 1.374 0 0 0 0 1.875l12.247 12.112a1.374 1.374 0 0 0 1.925 0l12.247-12.112a1.374 1.374 0 0 0 0-1.875L14.447.438a1.374 1.374 0 0 0-.964-.438zM8.01 16.94a.92.92 0 0 1-.652-.275l-2.726-2.726a.916.916 0 0 1 1.3-1.3l2.078 2.081 5.67-5.67a.916.916 0 0 1 1.3 1.3l-6.32 6.317a.92.92 0 0 1-.65.273z"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="container">
+
+  <section id="summary">
+    <h2>Profile Summary</h2>
+    <p>I'm an Applied AI engineer who builds production-ready systems, solves real-world problems, and ships fast — from idea to deployment.</p>
+    <ul>
+      <li>I build production-grade AI systems (with strong math and algorithm grip).</li>
+      <li>Will spend most of my time in Reinforcement Learning, implementing core algorithms.</li>
+      <li>Expert in production-ready projects involving fine-tuning, RAG, and agentic AI systems.</li>
+      <li>Great at designing scalable ML systems and optimizing cloud costs (System Design).</li>
+      <li>Helped many startups and companies with AI product development.</li>
+      <li>Founded Lasso Pacific in high school — gained 2M+ yearly visitors.</li>
+      <li>Built agriculture-based object detection + AI agents project — tested in local areas, loved by people.</li>
+      <li>Got offers from companies to buy some of my projects.</li>
+      <li>Open-sourced a 25K image dataset — downloaded by thousands (devs, researchers, companies).</li>
+      <li>Very fast learner — I know what today's AI stacks are built on.</li>
+      <li>I use ML/AI to solve real business problems at scale with beautiful UI.</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="item">
+      <h3>Data Science Intern – iNeuron.ai</h3>
+      <p><strong>January 2025 - March 2025</strong> | Bengaluru, Karnataka, India</p>
+      <ul>
+        <li>Developed a high-precision object detection model using YOLOv5 to identify and classify crops and plants for agricultural applications.</li>
+        <li>Annotated and open-sourced a 25,000-image dataset on Hugging Face, advancing global agritech research.</li>
+        <li>Designed and deployed an automated AI agents pipeline using AWS ECR, EC2, and Jenkins for real-time inference and insights.</li>
+        <li>Trained models on NVIDIA A100 GPUs, optimizing for high performance and real-world deployment.</li>
+        <li>Conducted rigorous testing across diverse agricultural environments to ensure model robustness.</li>
+        <li>Integrated SMTP for automated delivery of personalized research reports via a user-friendly UI.</li>
+        <li>Collaborated with teams to ensure seamless integration and scalability of the solution.</li>
+      </ul>
     </div>
-
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Hi, I’m Shaheen, from being a black hat script kiddie exploring darkweb during mid-nights to a data scientist with a strong focus on end-to-end projects and system design.</p>
-            <p>I am dedicated to contributing to open-source AI projects that fuel my passion for AI innovation.</p>
-            <p>My expertise spans a broad range of fields, including Machine Learning, Deep Learning, Computer Vision, NLP, Generative AI, Big Data, Reinforcement Learning, Large Language Models (LLMs), Cloud technologies, MLOps, and DevOps. I stay abreast of current trends like Retrieval-Augmented Generation (RAG) and LLM-based agents, covering the full spectrum of data science.</p>
-            <p>I use statistics and mathematics to develop and refine deep learning algorithms according to problem and situations, optimizing their performance and accuracy. Additionally, I leverage my skills in Data Structures and Algorithms (DSA) to build efficient and scalable solutions.</p>
-            <p>I excel in designing and productionizing ML solutions, using my system design skills to effectively approach complex AI problems and implement state-of-the-art solutions from concept to deployment. By employing modular coding techniques, I create maintainable, reusable, and scalable codebases that elevate the quality and efficiency of my projects to new heights.</p>
-            <p>I believe that real-world impact is driven by practical skills rather than just academic credentials. As a staunch advocate for open-source, I am inspired by the potential of code to transform lives and create meaningful, global change.</p>
-            <p>My current location is Bengaluru, which helps me connect with like-minded people through LinkedIn.</p>
-            <p>Thank you for visiting my profile.</p>
-        </div>
-
-        <div class="section">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3>Founder</h3>
-                <h4>Lasso Pacific · Part-time</h4>
-                <span>Jan 2022 - Dec 2022</span>
-                <span>Anantnag, Jammu & Kashmir, India</span>
-                <p>I founded Lasso Pacific, where we were selling some AI ML courses. I got some student clients looking for courses. I ended up recording a lot of videos, but due to my school, financial constraints, and lack of co-workers, I had to close it. Despite this, I learned a lot about starting an ed-tech business.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
-            <div class="education">
-                <h3>Ineuron.ai</h3>
-                <h4>1 year course, Full Stack Data Science</h4>
-                <span>Oct 2021 - Oct 2022</span>
-                <p>In this course, I learned Machine Learning from Sudhanshu Kumar, CEO of Ineuron, Deep Learning from Sunny Bhaveen Chandra, Computer Vision from Paul, and Mathematics like statistics and probability from Krish Naik. It was a broad course that helped me dive deep into these fields, thanks to Sunny Bhaveen Chandra for his excellent skills in explaining Deep Neural Networks.</p>
-<br>
-                <h3>Y.K. Pora H.S.S</h3>
-                <h4>High School Diploma, Computer Science</h4>
-                <span>Apr 2021 - Oct 2023</span>
-                <span>Grade: 75.2</span>
-                <p>Activities and societies: I didn't attend school much. My entire school career was a mess; I didn't like the curriculum there.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill">Databases</div>
-                <div class="skill">System Designing</div>
-                <div class="skill">Application Programming Interfaces (API)</div>
-                <div class="skill">Time Series Analysis</div>
-                <div class="skill">Diffusion Models</div>
-                <div class="skill">Transformer Models</div>
-                <div class="skill">Linux</div>
-                <div class="skill">Keras</div>
-                <div class="skill">Continuous Integration and Continuous Delivery (CI/CD)</div>
-                <div class="skill">Kubernetes</div>
-                <div class="skill">DevOps</div>
-                <div class="skill">LangChain</div>
-                <div class="skill">PyTorch</div>
-                <div class="skill">TensorFlow</div>
-                <div class="skill">Docker</div>
-                <div class="skill">Microsoft Azure</div>
-                <div class="skill">Git</div>
-                <div class="skill">Big Data</div>
-                <div class="skill">MLOps</div>
-                <div class="skill">Large Language Model Operations (LLMOps)</div>
-                <div class="skill">Large Language Models (LLM)</div>
-                <div class="skill">Statistics</div>
-                <div class="skill">Amazon Web Services (AWS)</div>
-                <div class="skill">Algorithms</div>
-                <div class="skill">Data Structures</div>
-                <div class="skill">Generative AI</div>
-                <div class="skill">Computer Vision</div>
-                <div class="skill">Natural Language Processing</div>
-                <div class="skill">Probability</div>
-                <div class="skill">Python (Programming Language)</div>
-                <div class="skill">Deep Reinforcement Learning</div>
-                <div class="skill">Deep Learning</div>
-                <div class="skill">Machine Learning</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Languages I Speak </h2>
-            <div class="languages">
-                <div class="language">English</div>
-                <div class="language">Hindi</div>
-
-            </div>
-        </div>
+    <div class="item">
+      <h3>Founder – Lasso Pacific Pvt Ltd</h3>
+      <p><strong>January 2022 - December 2022</strong> | Anantnag, Jammu & Kashmir, India</p>
+      <ul>
+        <li>Founded an AI-driven edtech platform to democratize AI and computer vision education, targeting rural students globally.</li>
+        <li>Developed hands-on courses in AI, computer vision, and autonomous systems, making complex topics accessible.</li>
+        <li>Attracted 2M+ annual visitors organically through high-value content and career roadmaps.</li>
+        <li>Managed curriculum development, partnerships, and global outreach to maximize educational impact.</li>
+        <li>Acquired an initial user base, validating demand for accessible AI education in underserved areas.</li>
+        <li>Navigated funding, scaling, and growth challenges, gaining expertise in entrepreneurship and product development.</li>
+        <li>Closed the venture but empowered thousands of learners with AI knowledge and career guidance.</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="footer">
-        <p class="contact">Contact me at: <a href="mailto:shaheen@example.com">ishaheennabi333@gmail.com</a></p>
-        <p class="rights">&copy; 2024 Shaheen Nabi. All rights reserved.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="item">
+      <h3><a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">🌾 LeafLogic Multi-AI Agents Project</a></h3>
+      <p><strong>Jan 2025 - Mar 2025</strong></p>
+      <ul>
+        <li>Developed a production-ready AI system identifying 100+ plant/crop species with a one-click solution.</li>
+        <li>Implemented a YOLO-based object detection pipeline with AWS ECR and EC2 for real-time inference.</li>
+        <li>Built a Multi-AI Agents framework using TaskFlowAI, OpenAI’s GPT-3.5 Turbo, Serper, and Exa APIs.</li>
+        <li>Automated training and research pipelines, enabling email delivery of reports via UI.</li>
+        <li>Ensured scalability for future expansion to additional crop species and use cases.</li>
+      </ul>
     </div>
+    <div class="item">
+      <h3><a href="https://github.com/shaheennabi/Production-Ready-TripPlanner-Multi-AI-Agents-Project" target="_blank">🌍 TripPlanner Multi-AI Agents Project</a></h3>
+      <p><strong>Dec 2024 - Jan 2025</strong></p>
+      <ul>
+        <li>Created a travel assistant with three AI agents for research, planning, and reporting.</li>
+        <li>Integrated real-time data for attractions, weather, and events, using GPT-3.5 Turbo for reports.</li>
+        <li>Designed a modular system for integration with additional travel services.</li>
+        <li>Optimized for personalized, hassle-free trip planning for travelers and professionals.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h3><a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">🧠 Instruction Fine-Tuning of Meta LLaMA 3.2 3B</a></h3>
+      <p><strong>Nov 2024 - Dec 2024</strong></p>
+      <ul>
+        <li>Fine-tuned LLaMA 3.2-3B Instruct using LoRA and 4-bit quantization for Kannada proficiency.</li>
+        <li>Used Hugging Face’s kannada-instruct-dataset-390k for improved accuracy and fluency.</li>
+        <li>Pushed model to Hugging Face Hub, used by hundreds of developers for Kannada NLP.</li>
+        <li>Trained on Google Colab Tesla T4 GPU with Unsloth, merging models in FP16.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming & Tools:</strong> Python, JavaScript, SQL, Linux, Git, Docker, Data Structures & Algorithms, Databases, <a href="https://leetcode.com/u/ishaheen333/" target="_blank">LeetCode</a></li>
+      <li><strong>Machine Learning & AI:</strong> Deep Learning, Computer Vision, Natural Language Processing, Large Language Models, Transformer Models, Diffusion Models, Deep Reinforcement Learning, Multi-agent Systems, Quantization, Time Series Analysis, Generative AI, MLOps, LLMOps, RAG, LoRA</li>
+      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, FAISS, MLflow, FastAPI, Flask, React.js, Streamlit</li>
+      <li><strong>DevOps & CI/CD:</strong> DevOps, Continuous Integration/Continuous Delivery, Jenkins, Kubernetes, GitHub Actions, DVC, Airflow</li>
+      <li><strong>Cloud & Infrastructure:</strong> AWS (S3, EC2, ECR, SageMaker), Microsoft Azure, System Designing, Big Data</li>
+      <li><strong>Other:</strong> Start-up Leadership, Statistics, Probability, APIs</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <i class="fas fa-graduation-cap"></i>
+      <div class="education-details">
+        <h3>Indira Gandhi National Open University</h3>
+        <p>Bachelor of Arts - Art Studies | Jan 2025 - Jan 2028</p>
+      </div>
+    </div>
+    <div class="education-item">
+      <i class="fas fa-laptop-code"></i>
+      <div class="education-details">
+        <h3>iNeuron Intelligence</h3>
+        <p>Full Stack Data Science | Oct 2021 - Oct 2022</p>
+      </div>
+    </div>
+    <div class="education-item">
+      <i class="fas fa-school"></i>
+      <div class="education-details">
+        <h3>Jammu and Kashmir Board of School Education</h3>
+        <p>High School Diploma, Mathematics and Computer Science | Apr 2021 - Oct 2023</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="volunteering">
+    <h2>Volunteering</h2>
+    <div class="item">
+      <h3>Cyber Fraud Prevention Volunteer – Cybersecurity Outreach, Rural India (Self-Organized)</h3>
+      <p><strong>January 2020 - December 2023</strong> | Social Services</p>
+      <ul>
+        <li>Initiated a grassroots campaign to educate rural Indian communities on cybersecurity threats and scam prevention.</li>
+        <li>Conducted one-on-one sessions and workshops, teaching digital safety practices like phishing detection and two-factor authentication.</li>
+        <li>Prevented numerous scams, saving victims tens of lakhs of rupees through education and intervention.</li>
+        <li>Empowered individuals with practical digital literacy, fostering confidence and sparking interest in digital safety.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h3>Senior Writer – Shexion</h3>
+      <p><strong>January 2020 - October 2020</strong> | Education</p>
+      <ul>
+        <li>Volunteered as a cybersecurity content writer for Shexion.com, creating articles and roadmaps for aspiring cybersecurity professionals.</li>
+        <li>Authored guides on networking, Linux, ethical hacking, and tools, plus analyses of cyber incidents like WannaCry and Pegasus.</li>
+        <li>Reached tens of thousands of readers, providing resources that supported career starters in cybersecurity.</li>
+        <li>Received feedback crediting content with clarity and career guidance, reinforcing my passion for tech education.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h3>Writer – Lasso Pacific Pvt Ltd</h3>
+      <p><strong>March 2022 - October 2022</strong> | Science and Technology</p>
+      <ul>
+        <li>Created educational content on Python, machine learning, computer vision, and autonomous systems for beginners.</li>
+        <li>Authored career roadmaps to make AI accessible, especially for rural students with limited resources.</li>
+        <li>Provided personalized career advice, encouraging young learners to pursue AI and tech careers.</li>
+        <li>Contributed to Lasso Pacific’s 2M+ annual visitors with beginner-friendly AI and data science content.</li>
+      </ul>
+    </div>
+    
+  </section>
+
+</div>
+
+<footer>
+  © 2025 Shaheen Nabi. All rights reserved.
+</footer>
+
 </body>
 </html>

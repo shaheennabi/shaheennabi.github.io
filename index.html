@@ -83,12 +83,16 @@
       color: #2c3e50;
       font-size: 1.4rem;
     }
-    .item h3 a {
-      color: #2c3e50;
+    .project-link {
+      text-align: right;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    .project-link a {
+      color: #60a5fa;
       text-decoration: none;
     }
-    .item h3 a:hover {
-      color: #60a5fa;
+    .project-link a:hover {
       text-decoration: underline;
     }
     .education-item {
@@ -141,6 +145,7 @@
       .education-item { flex-direction: column; align-items: flex-start; }
       .education-item i { margin-bottom: 10px; }
       header .social-links a { margin: 0 8px; font-size: 1.2rem; }
+      .project-link { text-align: left; }
     }
   </style>
 </head>
@@ -220,44 +225,62 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="item">
-      <h3><a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">🌾 LeafLogic Multi-AI Agents Project</a></h3>
-      <p><strong>Jan 2025 - Mar 2025</strong></p>
+      <h3>🌾 LeafLogic Multi-AI Agents Project</h3>
+      <p><strong>Jan 2025 - Mar 2025</strong></panus, India</p>
       <ul>
-        <li>Developed a production-ready AI system identifying 100+ plant/crop species with a one-click solution.</li>
-        <li>Implemented a YOLO-based object detection pipeline with AWS ECR and EC2 for real-time inference.</li>
-        <li>Built a Multi-AI Agents framework using TaskFlowAI, OpenAI’s GPT-3.5 Turbo, Serper, and Exa APIs.</li>
-        <li>Automated training and research pipelines, enabling email delivery of reports via UI.</li>
-        <li>Ensured scalability for future expansion to additional crop species and use cases.</li>
+        <li>Developed a production-ready, fully automated AI system capable of identifying 100+ plant and crop species with a one-click solution, ensuring fast and efficient detection.</li>
+        <li>Designed and implemented a high-performance object detection pipeline leveraging YOLO, great for real-world agricultural applications.</li>
+        <li>Built a Multi-AI Agents framework that autonomously retrieves enriched plant data from the web, extracting insights on species characteristics, optimal growth conditions, price details and commercial applications.</li>
+        <li>Engineered a scalable and cloud-optimized infrastructure, integrating AWS ECR, EC2, enabling real-time inference and seamless deployment.</li>
+        <li>Automated the complete AI pipeline, covering training, and post-detection research, significantly reducing manual intervention.</li>
+        <li>Utilized OpenAI's Chat Completion API (GPT-3.5 Turbo) alongside Serper API, Exa API, and other external services, leveraging the TaskFlowAI open-source framework to build a robust Multi AI-Agents pipeline.</li>
+        <li>Conducted extensive testing and validation in diverse agricultural environments, ensuring the model’s adaptability and high performance in real-world conditions.</li>
+        <li>Ensured modularity and scalability, allowing easy expansion to support additional crop species and agricultural use cases in the future.</li>
+        <li>Enabled customers to receive their summarized reports directly via email by entering their email address on the UI, ensuring a seamless and convenient user experience.</li>
       </ul>
+      <div class="project-link">
+        <a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
+      </div>
     </div>
     <div class="item">
-      <h3><a href="https://github.com/shaheennabi/Production-Ready-TripPlanner-Multi-AI-Agents-Project" target="_blank">🌍 TripPlanner Multi-AI Agents Project</a></h3>
+      <h3>🌍 TripPlanner Multi-AI Agents Project</h3>
       <p><strong>Dec 2024 - Jan 2025</strong></p>
       <ul>
-        <li>Created a travel assistant with three AI agents for research, planning, and reporting.</li>
-        <li>Integrated real-time data for attractions, weather, and events, using GPT-3.5 Turbo for reports.</li>
-        <li>Designed a modular system for integration with additional travel services.</li>
-        <li>Optimized for personalized, hassle-free trip planning for travelers and professionals.</li>
+        <li>Developed an intelligent travel assistant integrating three AI-driven agents to automate and optimize the travel planning experience.</li>
+        <li>Web Research Agent: Gathers comprehensive destination insights, including local attractions, events, weather updates, and essential travel information.</li>
+        <li>Travel Planner Agent: Creates personalized itineraries, suggests appropriate clothing based on real-time weather forecasts, and recommends optimized travel routes.</li>
+        <li>Report Generator Agent: Utilizes GPT-3.5 Turbo to compile a concise and actionable travel report, consolidating all essential details for seamless trip planning.</li>
+        <li>Designed for efficiency and personalization, ensuring travelers receive relevant, well-structured information tailored to their preferences and schedules.</li>
+        <li>Built with modularity and scalability, allowing easy integration with additional travel services, AI enhancements, and real-time data sources.</li>
+        <li>Optimized for travel enthusiasts, business professionals, and frequent flyers, providing an AI-powered solution for hassle-free and well-organized trips.</li>
       </ul>
+      <div class="project-link">
+        <a href="https://github.com/shaheennabi/Production-Ready-TripPlanner-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
+      </div>
     </div>
     <div class="item">
-      <h3><a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">🧠 Instruction Fine-Tuning of Meta LLaMA 3.2 3B</a></h3>
+      <h3>🧠 Instruction Fine-Tuning of Meta LLaMA 3.2 3B</h3>
       <p><strong>Nov 2024 - Dec 2024</strong></p>
       <ul>
-        <li>Fine-tuned LLaMA 3.2-3B Instruct using LoRA and 4-bit quantization for Kannada proficiency.</li>
-        <li>Used Hugging Face’s kannada-instruct-dataset-390k for improved accuracy and fluency.</li>
-        <li>Pushed model to Hugging Face Hub, used by hundreds of developers for Kannada NLP.</li>
-        <li>Trained on Google Colab Tesla T4 GPU with Unsloth, merging models in FP16.</li>
+        <li>Fine-tuned the Meta LLaMA 3.2-3B Instruct model using LoRA (Low-Rank Adaptation) and 4-bit quantization, enhancing its ability to generate context-aware responses in Kannada.</li>
+        <li>Focused on improving the model’s proficiency in understanding and generating highly relevant, instruction-following responses in conversational inputs.</li>
+        <li>Utilized the Hugging Face dataset charanhu/kannada-instruct-dataset-390k to refine contextual accuracy and linguistic fluency.</li>
+        <li>Pushed the fine-tuned model to the Hugging Face Hub, where it is actively used by hundreds of developers monthly for Kannada NLP applications.</li>
+        <li>Developed using the Unsloth framework and trained on Google Colab Tesla T4 GPU, ensuring an efficient fine-tuning process.</li>
+        <li>Merged the base model and fine-tuned model into 16-bit floating point (FP16) for optimized deployment and inference.</li>
       </ul>
+      <div class="project-link">
+        <a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">View on GitHub</a>
+      </div>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li><strong>Programming & Tools:</strong> Python, JavaScript, SQL, Linux, Git, Docker, Data Structures & Algorithms, Databases, <a href="https://leetcode.com/u/ishaheen333/" target="_blank">LeetCode</a></li>
+      <li><strong>Programming & Tools:</strong> Python, SQL, Linux, Git, Docker, Data Structures & Algorithms, Databases, <a href="https://leetcode.com/u/ishaheen333/" target="_blank">LeetCode</a></li>
       <li><strong>Machine Learning & AI:</strong> Deep Learning, Computer Vision, Natural Language Processing, Large Language Models, Transformer Models, Diffusion Models, Deep Reinforcement Learning, Multi-agent Systems, Quantization, Time Series Analysis, Generative AI, MLOps, LLMOps, RAG, LoRA</li>
-      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, FAISS, MLflow, FastAPI, Flask, React.js, Streamlit</li>
+      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, FAISS, MLflow, FastAPI</li>
       <li><strong>DevOps & CI/CD:</strong> DevOps, Continuous Integration/Continuous Delivery, Jenkins, Kubernetes, GitHub Actions, DVC, Airflow</li>
       <li><strong>Cloud & Infrastructure:</strong> AWS (S3, EC2, ECR, SageMaker), Microsoft Azure, System Designing, Big Data</li>
       <li><strong>Other:</strong> Start-up Leadership, Statistics, Probability, APIs</li>
@@ -321,7 +344,6 @@
         <li>Contributed to Lasso Pacific’s 2M+ annual visitors with beginner-friendly AI and data science content.</li>
       </ul>
     </div>
-    
   </section>
 
 </div>

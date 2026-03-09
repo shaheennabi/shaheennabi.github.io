@@ -3,758 +3,593 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shaheen Nabi | Machine Learning Engineer Portfolio</title>
+  <title>Shaheen Nabi — Research Engineer</title>
+  <meta name="description" content="Shaheen Nabi — Independent Research Engineer working on post-training, reasoning models, and inference-time compute for large language models.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Shaheen Nabi",
-  "alternateName": "Shaheen Nabi Mir",
-  "jobTitle": "Machine Learning Engineer",
-  "url": "https://shaheennabi.github.io",
-  "mainEntityOfPage": "https://shaheennabi.github.io",
-  "image": "https://avatars.githubusercontent.com/u/84982228?v=4",
-  "description": "Shaheen Nabi is a Indian Machine Learning Engineer from Kashmir, India, passionate about AI, Research, and building scalable solutions to real-world problems.",
-  "birthDate": "2006-04-04",
-  "gender": "Male",
-  "nationality": {
-    "@type": "Country",
-    "name": "India"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN",
-    "addressRegion": "Jammu and Kashmir"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Indira Gandhi National Open University"
-  },
-  "parent": [
-    {
-      "@type": "Person",
-      "name": "Ghulam Nabi Mir"
-    },
-    {
-      "@type": "Person",
-      "name": "Imtiyaza Banu"
-    }
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/shaheennabi",
-    "https://github.com/shaheennabi",
-    "https://twitter.com/ShaheenNabi1",
-    "https://www.instagram.com/ishaheennabi",
-    "https://www.wikidata.org/wiki/Q135215563",
-    "https://substack.com/@shaheennabi",
-    "https://medium.com/@ishaheennabi333",
-    "https://leetcode.com/u/ishaheen333"
-  ],
-  "knowsAbout": [
-    "Machine Learning",
-    "Deep Learning",
-    "DevOps",
-    "Natural Language Processing (NLP)",
-    "Cloud Computing",
-    "MLOps"
-  ]
-}
-</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --bg: #faf9f7;
+      --bg-subtle: #f4f2ef;
+      --text: #1a1916;
+      --text-mid: #3d3b38;
+      --text-dim: #7a7870;
+      --link: #1d4ed8;
+      --link-hover: #1e3a8a;
+      --border: #e2e0db;
+      --border-light: #eeece8;
+      --serif: 'EB Garamond', Georgia, serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'IBM Plex Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16.5px;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
-      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-      color: #fff;
-      padding: 60px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .header-content {
-      max-width: 600px;
-      text-align: left;
-    }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2.5rem;
-      font-weight: 700;
-      animation: fadeIn 1s ease-in;
-    }
-    header p {
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
-    header .social-links {
-      margin: 20px 0;
-    }
-    header .social-links a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-    header .social-links a:hover {
-      color: #60a5fa;
-      transform: scale(1.2);
-    }
-    .x-icon, .leetcode-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      vertical-align: middle;
-    }
-    .profile-photo {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center;
-      margin-left: 40px;
-      border: 4px solid #60a5fa;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .profile-photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
-    }
-    .cta-buttons {
-      margin-top: 20px;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px 10px 0 0;
-      background-color: #60a5fa;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    .cta-button:hover {
-      background-color: #3b82f6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
-      animation: none;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    section {
-      background: #fff;
-      margin-bottom: 30px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    #summary {
-      background: linear-gradient(180deg, #f9fafb 0%, #fff 100%);
-      padding: 35px;
-    }
-    #summary h2::before {
-      content: "\f2bd";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      color: #60a5fa;
-      margin-right: 10px;
-    }
-    h2 {
-      color: #1f2937;
-      border-bottom: 3px solid #60a5fa;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-      font-size: 1.8rem;
-    }
-    .work-together h2 {
-      display: inline-block;
-      border-bottom: 3px solid #60a5fa;
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-left: 20px;
-      margin: 10px 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .item {
-      margin-bottom: 25px;
-    }
-    .item h3 {
-      margin-bottom: 8px;
-      color: #2c3e50;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
-    }
-    .item h3:hover {
-      color: #60a5fa;
-    }
-    .project-tags {
-      margin: 10px 0;
-      opacity: 0;
-      transform: translateX(-20px);
-      animation: slideIn 0.8s ease forwards 0.3s;
-    }
-    .project-tag {
-      display: inline-block;
-      background-color: #e5e7eb;
-      color: #2c3e50;
-      padding: 5px 10px;
-      margin: 0 5px 5px 0;
-      border-radius: 15px;
-      font-size: 0.9rem;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .project-tag:hover {
-      background-color: #d1d5db;
-      transform: scale(1.1);
-    }
-    .tech-stack {
-      margin: 10px 0;
-      font-size: 0.95rem;
-      color: #4b5563;
-      opacity: 0;
-      transform: translateX(-20px);
-      animation: slideIn 0.8s ease forwards 0.5s;
-    }
-    .tech-stack strong {
-      color: #2c3e50;
-    }
-    .project-link {
-      text-align: right;
-      font-style: italic;
-      margin-top: 10px;
-    }
-    .project-link a {
-      color: #60a5fa;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .project-link a:hover {
-      color: #3b82f6;
-      text-decoration: underline;
-    }
-    .view-all-projects {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .view-all-projects a {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #60a5fa;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .view-all-projects a:hover {
-      background-color: #3b82f6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
-    }
-    .recommendation-card {
-      background: #f9fafb;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .recommendation-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .recommendation-card h3 {
-      margin: 0 0 5px;
-      color: #2c3e50;
-      font-size: 1.2rem;
-    }
-    .recommendation-card p {
-      margin: 5px 0;
-      color: #4b5563;
-    }
-    .recommendation-card blockquote {
-      font-style: italic;
-      color: #374151;
-      margin: 10px 0 0;
-      padding-left: 20px;
-      border-left: 3px solid #60a5fa;
-    }
-    .work-together {
-      background: #f9fafb;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .work-together p {
-      margin: 0 auto 20px;
-      max-width: 600px;
-      color: #374151;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .work-together a {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #60a5fa;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 500;
-      position: relative;
-      overflow: hidden;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    .work-together a:hover {
-      background-color: #3b82f6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
-      animation: none;
-    }
-    .work-together a span {
-      position: relative;
-      z-index: 1;
-      transition: opacity 0.3s ease;
-    }
-    .work-together a:hover span {
-      opacity: 0;
-    }
-    .work-together a::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.4s ease, height 0.4s ease;
-      z-index: 0;
-    }
-    .work-together a:hover::after {
-      width: 150px;
-      height: 150px;
-    }
-    .education-item {
-      display: flex;
-      align-items: center;
-      background: #f9fafb;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .education-item:hover {
-      background: #e5e7eb;
-      transform: translateY(-3px);
-    }
-    .education-item i {
-      font-size: 2rem;
-      color: #60a5fa;
-      margin-right: 20px;
-      transition: color 0.3s ease;
-    }
-    .education-item:hover i {
-      color: #3b82f6;
-    }
-    .education-details h3 {
-      margin: 0 0 5px;
-      font-size: 1.3rem;
-    }
-    .education-details p {
-      margin: 5px 0;
-      color: #4b5563;
-    }
-    footer {
-      background: #1f2937;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-    }
+
     a {
-      color: #60a5fa;
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 100px;
+      animation: fadeIn 0.45s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      color: #b0ada6;
+      transition: color 0.15s;
+    }
+    .social-icons a:hover { color: var(--text-mid); text-decoration: none; }
+
+    .social-icons svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .topbar-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .topbar-nav a {
+      font-family: var(--sans);
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .topbar-nav a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── PROFILE ── */
+    .profile {
+      display: grid;
+      grid-template-columns: 1fr 148px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 52px;
+    }
+
+    .profile-photo {
+      width: 148px;
+      height: 148px;
+      border-radius: 3px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      filter: grayscale(8%);
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.15rem;
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .profile-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      font-family: var(--mono);
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .profile-bio {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.84;
+    }
+
+    .profile-bio p + p { margin-top: 15px; }
+
+    .profile-bio strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 56px; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.22rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 22px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.005em;
+    }
+
+    /* ── RESEARCH INTERESTS ── */
+    .interests-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .interests-list li {
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+      padding: 11px 8px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.93rem;
+      line-height: 1.65;
+      border-radius: 2px;
+      transition: background 0.12s;
+    }
+
+    .interests-list li:hover {
+      background: var(--bg-subtle);
+    }
+
+    .interests-list li:last-child { border-bottom: none; }
+
+    .interests-list .topic {
+      font-weight: 500;
+      color: var(--text);
+      min-width: 215px;
+      flex-shrink: 0;
+      font-size: 0.88rem;
+    }
+
+    .interests-list .detail {
+      color: var(--text-dim);
+      font-size: 0.87rem;
+    }
+
+    /* ── OUTPUTS ── */
+    .output-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .output-item:last-child { border-bottom: none; }
+
+    .output-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .output-title {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.38;
+      margin-bottom: 6px;
+    }
+
+    .output-desc {
+      font-size: 0.87rem;
+      color: var(--text-dim);
+      line-height: 1.72;
+      margin-bottom: 11px;
+      max-width: 620px;
+    }
+
+    .output-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .output-links a {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--link);
+      background: #eff4ff;
+      border: 1px solid #c7d7f0;
+      padding: 3px 11px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .output-links a:hover {
+      background: #dbeafe;
+      border-color: var(--link-hover);
+      color: var(--link-hover);
       text-decoration: none;
     }
-    a:hover {
-      color: #3b82f6;
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-light);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      padding-top: 2px;
+      line-height: 1.5;
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    .exp-role {
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
     }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
+
+    .exp-org {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 7px;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+
+    .exp-desc {
+      font-size: 0.87rem;
+      color: var(--text-dim);
+      line-height: 1.68;
     }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .header-content {
-        text-align: center;
-      }
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      .profile-photo {
-        margin: 20px 0 0;
-        width: 180px;
-        height: 180px;
-      }
-      section { padding: 20px; }
-      #summary { padding: 25px; }
-      .education-item { flex-direction: column; align-items: flex-start; }
-      .education-item i { margin-bottom: 10px; }
-      header .social-links a { margin: 0 8px; font-size: 1.2rem; }
-      .project-link { text-align: left; }
-      .recommendation-card { padding: 15px; }
-      .work-together { padding: 30px 15px; }
-      .work-together p { font-size: 1rem; }
-      .work-together h2 {
-        font-size: 1.5rem;
-      }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .edu-item:last-child { border-bottom: none; }
+
+    .edu-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+
+    .edu-deg {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .edu-inst {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* ── OSS NOTE ── */
+    .oss-note {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-left: 3px solid #c8b89a;
+      border-radius: 2px;
+      padding: 14px 18px;
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.72;
+      margin-top: 24px;
+    }
+    .oss-note strong { color: var(--text); font-weight: 500; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--text-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 620px) {
+      .page { padding: 30px 20px 80px; }
+      .topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .profile { grid-template-columns: 1fr; gap: 28px; }
+      .profile-photo { width: 108px; height: 108px; }
+      .exp-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
+      .interests-list li { flex-direction: column; gap: 3px; }
+      .interests-list .topic { min-width: unset; }
+      footer { flex-direction: column; gap: 6px; }
     }
   </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="header-content">
-    <h1>Shaheen Nabi</h1>
-    <p>Machine Learning Engineer | Building ML pipelines | DevOps + AI | Python | Sharing my journey in tech</p>
-    <div class="social-links">
-      <a href="mailto:ishaheennabi333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/shaheennabi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face"><i class="fas fa-robot"></i></a>
-      <a href="https://twitter.com/ShaheenNabi1" target="_blank" title="Twitter/X">
-        <svg class="x-icon" viewBox="0 0 24 24" fill="#fff">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a>
-      <a href="https://leetcode.com/u/ishaheen333/" target="_blank" title="LeetCode">
-        <svg class="leetcode-icon" viewBox="0 0 24 24" fill="#fff">
-          <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L.275 12.575a1.374 1.374 0 0 0 0 1.875l12.247 12.112a1.374 1.374 0 0 0 1.925 0l12.247-12.112a1.374 1.374 0 0 0 0-1.875L14.447.438a1.374 1.374 0 0 0-.964-.438zM8.01 16.94a.92.92 0 0 1-.652-.275l-2.726-2.726a.916.916 0 0 1 1.3-1.3l2.078 2.081 5.67-5.67a.916.916 0 0 1 1.3 1.3l-6.32 6.317a.92.92 0 0 1-.65.273z"/>
-        </svg>
-      </a>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="social-icons">
+        <a href="mailto:devshaheen0@gmail.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="https://github.com/shaheennabi" target="_blank" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/DevShaheen1" target="_blank" title="X / Twitter">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-3.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6.5 5.5s1 2 3 2 3-2 3-2H9z"/></svg>
+        </a>
+        <a href="https://substack.com/@shaheennabi" target="_blank" title="Substack">
+          <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="cta-buttons">
-      <a href="https://github.com/shaheennabi?tab=repositories" class="cta-button" target="_blank">View My Work</a>
-      <a href="resume.pdf" class="cta-button" download>Download My Resume</a>
+    <ul class="topbar-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#outputs">Outputs</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="profile" id="about">
+    <div>
+      <h1>Shaheen Nabi</h1>
+      <div class="profile-subtitle">Research Engineer (Independent) · Bengaluru, India</div>
+      <div class="profile-bio">
+        <p>
+          Hi! 👋 I'm Shaheen, an independent Research Engineer based in Bengaluru, India. My research is centered on <strong>reasoning and thinking models</strong> — understanding what makes a model reason well, and how to make it reason better at lower cost.
+        </p>
+        <p>
+          I approach this from the ground up: studying how decisions made during pre-training and mid-training — data composition, continual pre-training, and architectural choices like hybrid MoE and state space models — shape the reasoning capabilities that emerge downstream. I'm interested in how these foundation-level choices propagate through to post-training, and what they make possible or limit.
+        </p>
+        <p>
+          The core of my work lives in <strong>post-training</strong>: RLVR, SFT, preference optimization pipelines, and test-time compute — how to get a model to think better, for less. I actively follow and engage with new research in reasoning: small reasoning architectures, hierarchical reasoning, and emerging approaches to efficient thinking. The longer-term question I care about is how these directions can push the next generation of frontier reasoning models — cracking harder benchmarks while becoming more compute-efficient at inference.
+        </p>
+        <p>
+          I contribute to open source through <a href="https://github.com/shaheennabi/" target="_blank">code</a> and <a href="https://substack.com/@shaheennabi/posts" target="_blank">writing</a>, and am actively working toward pushing contributions into large LLM infrastructure and post-training frameworks.
+        </p>
+      </div>
+    </div>
+    <img src="Shaheen-Nabi.jpg" alt="Shaheen Nabi" class="profile-photo">
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section" id="research">
+    <h2>Research Interests</h2>
+    <ul class="interests-list">
+      <li>
+        <span class="topic">Scaling Foundation Models</span>
+        <span class="detail">Data composition, quality, and curation at scale. How pre-training decisions — compute allocation, data mixtures, and training dynamics — shape the capabilities available to post-training.</span>
+      </li>
+      <li>
+        <span class="topic">Continual &amp; Mid-Training</span>
+        <span class="detail">How continued pre-training and mid-training interventions affect the reasoning qualities that emerge in later stages. The relationship between training phase, data distribution, and downstream reasoning behavior.</span>
+      </li>
+      <li>
+        <span class="topic">Architectures for Reasoning</span>
+        <span class="detail">How architectural choices — hybrid MoE, state space models, and dense-sparse combinations — affect reasoning capabilities. Studying new open model families to understand what architectural decisions make models more or less amenable to post-training reasoning improvements.</span>
+      </li>
+      <li>
+        <span class="topic">Post-Training Pipelines</span>
+        <span class="detail">RLVR, SFT, and preference optimization. How reward signals, data quality, and training dynamics in post-training interact with the capabilities laid down during pre-training.</span>
+      </li>
+      <li>
+        <span class="topic">Test-Time Compute &amp; Efficient Reasoning</span>
+        <span class="detail">Making models think better at lower cost. Process reward models, adaptive compute budgeting, and search-guided generation. The core question: how do we build models that know <em>when</em> to stop thinking, not just how to think longer.</span>
+      </li>
+      <li>
+        <span class="topic">Emerging Reasoning Architectures</span>
+        <span class="detail">Actively following new directions: small reasoning models, hierarchical reasoning architectures, and novel thinking paradigms. Interested in how these approaches can inform the next generation of frontier reasoning models and open new possibilities on hard benchmarks.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- OUTPUTS -->
+  <div class="section" id="outputs">
+    <h2>Outputs</h2>
+    <p style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--mono); margin-bottom: 24px; letter-spacing: 0.02em;">
+      Open-source repositories, writing, and models — in lieu of publications.
+    </p>
+
+    <div class="output-item">
+      <div class="output-meta">2025 · Writing · Substack</div>
+      <div class="output-title">Reinforcement Learning Foundations</div>
+      <div class="output-desc">A technical introduction to the mathematical foundations of RL — MDPs, Bellman equations, policy gradients, and value functions — written for researchers entering the field from a supervised learning background.</div>
+      <div class="output-links">
+        <a href="https://substack.com/home/post/p-181403736" target="_blank">Read ↗</a>
+      </div>
+    </div>
+
+    <div class="output-item">
+      <div class="output-meta">2025 · Open-Source · GitHub</div>
+      <div class="output-title">Reinforcement Learning: Zero to Hero</div>
+      <div class="output-desc">A maintained RL repository — MDPs through PPO and DDPG — with clean implementations and math annotations. Written for practitioners building the intuition needed for modern post-training research.</div>
+      <div class="output-links">
+        <a href="https://github.com/shaheennabi/Reinforcement-Learning-Zero-to-Hero" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="output-item">
+      <div class="output-meta">2025 · Implementation · Architecture</div>
+      <div class="output-title">Attention Variants from Scratch — GQA &amp; MLA</div>
+      <div class="output-desc">PyTorch implementations of Grouped-Query Attention and Multi-Head Latent Attention. GQA shares KV heads across query groups to reduce cache memory. MLA (as in DeepSeek) compresses KV into a low-rank latent space and up-projects at inference, decoupling cache footprint from model width.</div>
+      <div class="output-links">
+        <a href="https://github.com/shaheennabi" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="output-item">
+      <div class="output-meta">2024 · Fine-Tuning · Open Source</div>
+      <div class="output-title">Instruction Fine-Tuning of LLaMA 3.2 3B — Kannada</div>
+      <div class="output-desc">LoRA + 4-bit QLoRA fine-tune of Meta LLaMA 3.2-3B Instruct on 390K Kannada instruction pairs. Merged to FP16 for deployment. Released on Hugging Face Hub; used by hundreds of developers monthly for regional NLP applications.</div>
+      <div class="output-links">
+        <a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">GitHub ↗</a>
+        <a href="https://huggingface.co/devshaheen" target="_blank">Model ↗</a>
+      </div>
+    </div>
+
+    <div class="output-item">
+      <div class="output-meta">2025 · Applied ML · Dataset</div>
+      <div class="output-title">LeafLogic — Agricultural Object Detection &amp; Multi-Agent Pipeline</div>
+      <div class="output-desc">YOLOv5 detection pipeline (NVIDIA A100) for 100+ crop species. Multi-agent framework for autonomous post-detection research and reporting. Deployed on AWS ECR/EC2. Open-sourced a 25K annotated image dataset on Hugging Face, used by researchers globally.</div>
+      <div class="output-links">
+        <a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">GitHub ↗</a>
+        <a href="https://huggingface.co/devshaheen" target="_blank">Dataset ↗</a>
+      </div>
+    </div>
+
+    <div class="oss-note">
+      <strong>Open source.</strong> I contribute through code and writing, and am actively working toward pushing contributions into large LLM infrastructure frameworks and post-training pipelines at scale — and actively document my journey so it can help others along the way.
     </div>
   </div>
-  <img src="Shaheen-Nabi.jpg" alt="Shaheen Nabi" class="profile-photo">
-</header>
 
-<section id="biography">
-  <h2>Shaheen Nabi - Professional Biography</h2>
-
-  <p><strong>Shaheen Nabi</strong> is an <strong>Indian Machine Learning Engineer, Software Developer,</strong> from <strong>Jammu and Kashmir, India, </strong> He founded <strong>Lasso Pacific</strong> in his high-school, He writes about <strong>Machine Learning, Foreign Policies</strong> of countries, etc</p>
-
-  <p>Growing up in a village with very limited exposure to technology, where most people, including teenagers around him, were unaware of the digital world and many fell into <strong>drug abuse or hopelessness</strong>, Shaheen found his calling when he first encountered a computer and was stunned by simply seeing a photograph on screen - a moment that became the <strong>spark of his lifelong obsession with technology</strong>.</p>
-
-  <p>Even during his <strong>middle school years</strong>, he was already diving deep into <strong>digital marketing and SEO</strong>, studying how Google's search algorithms worked, exploring black-hat techniques, and learning about hidden indexing, eventually building websites to sell <strong>Kashmiri saffron and walnuts</strong> and making actual sales, which taught him the power of the internet and entrepreneurship.</p>
-
-  <p>In 2019, he collected books and began studying how <strong>computers work at the architectural level</strong>, including RAM, CPU design, memory, and logic, using this offline time to lay a solid technical foundation that would prove invaluable later.</p>
-
-  <p>Eventually shifting his focus to <strong>cybersecurity</strong>, Shaheen began blogging about major cyber threats like <strong>Pegasus, Stuxnet, NSA tools, and online surveillance</strong>, while simultaneously helping people in his region, especially villagers, understand cyber fraud, identity theft, and digital hygiene by teaching them about malware, phishing, spyware, and sextortion scams - efforts that <strong>saved many people from real harm</strong> and gave him a sense of purpose while inspiring <strong>thousands of learners across India</strong> and even reaching professors and students in the United States through his writing.</p>
-
-  <p>During this challenging period when he had no computer of his own, one of his closest friends, <strong>Rajahat</strong>, provided crucial support by lending him his laptop and giving him his <strong>Arduino Uno</strong>, which helped Shaheen get started with embedded systems and microcontroller programming - support without which he acknowledges he wouldn't have made it through that phase.</p>
-
-  <p>His fascination with the idea that machines could learn from data led him to fall in love with <strong>Artificial Intelligence</strong>, resulting in projects like <strong>LeafLogic</strong>, an AI-powered agricultural tool using object detection, and the release of an open-source dataset to help researchers, while also founding <strong>Lasso Pacific</strong>, a company focused on delivering affordable AI and robotics education to rural learners, with the money he made being reinvested in <strong>free tech literacy programs for kids</strong> who had never touched a computer.</p>
-<p>Despite reaching out personally to professors and universities in the United States during high school, I was rejected by many institutions because I couldn’t afford to take standardized tests like the SAT and didn’t have the financial means to study abroad — but I never let that stop my learning or my impact.</p>
-
-
-  <p>Coming from a place often associated with drug trafficking and poverty, Shaheen carved a different path built on <strong>education, ethical hacking, and open-source contribution</strong>, consistently teaching others what he knew in cybersecurity, AI, and digital resilience.</p>
-
-  <p>Parallel to his technical work, he has developed deep expertise in <strong>geopolitics</strong> with a focus on <strong>American foreign policy, the Military-Industrial Complex, and Indo-Pacific strategy</strong>, studying and teaching about modern warfare, proxy conflicts, and defense technologies while combining technical and strategic thinking in his geopolitical analysis that often blends history, engineering, and policy insight.</p>
-
-  <p>Currently in his <strong>first year of college</strong>, Shaheen plans to start working in companies next year while his current focus involves going deep into areas like <strong>deep neural networks, LLMs (large language models), and reinforcement learning</strong>, with the goal of implementing cutting-edge research papers and contributing to AI systems, and his long-term vision includes moving to the <strong>United States</strong> not only to grow professionally but to collaborate on solving global problems at the frontier of technology.</p>
-
-  <p>This represents not just a journey from village to tech, but <strong>from vulnerability to impact</strong> - from watching people fall to drugs and scams to becoming someone who empowers others with knowledge, code, and vision, building a roadmap toward global change that starts from the ground up.</p>
-</section>
-
-<div class="container">
-  <section id="summary">
-    <h2>Profile Summary</h2>
-    <p>I'm “Machine Learning Engineer focused on building intelligent DevOps systems using Python, NLP, and cloud platforms.”</p>
-    <ul>
-      <li>I build production-grade AI systems (with strong math and algorithm grip).</li>
-      <li>Will spend most of my time in Reinforcement Learning, implementing core algorithms.</li>
-      <li>Expert in production-ready projects involving fine-tuning, RAG, and agentic AI systems.</li>
-      <li>Great at designing scalable ML systems and optimizing cloud costs (System Design).</li>
-      <li>Helped many startups and companies with AI product development.</li>
-      <li>Founded Lasso Pacific in high school — gained 2M+ yearly visitors.</li>
-      <li>Built agriculture-based object detection + AI agents project — tested in local areas, loved by people.</li>
-      <li>Got offers from companies to buy some of my projects.</li>
-      <li>Open-sourced a 25K image dataset — downloaded by thousands (devs, researchers, companies).</li>
-      <li>Very fast learner — I know what today's AI stacks are built on.</li>
-      <li>I use ML/AI to solve real business problems at scale with modular code practices.</li>
-    </ul>
-  </section>
-
-  <section id="experience">
+  <!-- EXPERIENCE -->
+  <div class="section" id="experience">
     <h2>Experience</h2>
-    <div class="item">
-      <h3>Data Science Intern – iNeuron.ai</h3>
-      <p><strong>January 2025 - March 2025</strong> | Bengaluru, Karnataka, India</p>
-      <ul>
-        <li>Developed a high-precision object detection model using YOLOv5 to identify and classify crops and plants for agricultural applications.</li>
-        <li>Annotated and open-sourced a 25,000-image dataset on Hugging Face, advancing global agritech research.</li>
-        <li>Designed and deployed an automated AI agents pipeline using AWS ECR, EC2, and Jenkins for real-time inference and insights.</li>
-        <li>Trained models on NVIDIA A100 GPUs, optimizing for high performance and real-world deployment.</li>
-        <li>Conducted rigorous testing across diverse agricultural environments to ensure model robustness.</li>
-        <li>Integrated SMTP for automated delivery of personalized research reports via a user-friendly UI.</li>
-        <li>Collaborated with teams to ensure seamless integration and scalability of the solution.</li>
-      </ul>
-    </div>
-    <div class="item">
-      <h3>Founder – Lasso Pacific Pvt Ltd</h3>
-      <p><strong>January 2022 - December 2022</strong> | Anantnag, Jammu & Kashmir, India</p>
-      <ul>
-        <li>Founded an AI-driven edtech platform to democratize AI and computer vision education, targeting rural students globally.</li>
-        <li>Developed hands-on courses in AI, computer vision, and autonomous systems, making complex topics accessible.</li>
-        <li>Attracted 2M+ annual visitors organically through high-value content and career roadmaps.</li>
-        <li>Managed curriculum development, partnerships, and global outreach to maximize educational impact.</li>
-        <li>Acquired an initial user base, validating demand for accessible AI education in underserved areas.</li>
-        <li>Navigated funding, scaling, and growth challenges, gaining expertise in entrepreneurship and product development.</li>
-        <li>Closed the venture but empowered thousands of learners with AI knowledge and career guidance.</li>
-      </ul>
-    </div>
-  </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="item">
-      <h3>🌾 LeafLogic Multi-AI Agents Project</h3>
-      <p><strong>Jan 2025 - Mar 2025</strong></p>
-      <div class="project-tags">
-        <span class="project-tag">Computer Vision</span>
-        <span class="project-tag">Agentic AI</span>
-        <span class="project-tag">Agriculture</span>
-        <span class="project-tag">Cloud Computing</span>
-        <span class="project-tag">YOLO</span>
-        <span class="project-tag">Multi-Agent Systems</span>
-        <span class="project-tag">Scalable Infrastructure</span>
-        <span class="project-tag">Generative AI</span>
-      </div>
-      <ul>
-        <li>Developed a production-ready, fully automated AI system capable of identifying 100+ plant and crop species with a one-click solution, ensuring fast and efficient detection.</li>
-        <li>Designed and implemented a high-performance object detection pipeline leveraging YOLO, great for real-world agricultural applications.</li>
-        <li>Built a Multi-AI Agents framework that autonomously retrieves enriched plant data from the web, extracting insights on species characteristics, optimal growth conditions, price details and commercial applications.</li>
-        <li>Engineered a scalable and cloud-optimized infrastructure, integrating AWS ECR, EC2, enabling real-time inference and seamless deployment.</li>
-        <li>Automated the complete AI pipeline, covering training, and post-detection research, significantly reducing manual intervention.</li>
-        <li>Utilized OpenAI's Chat Completion API (GPT-3.5 Turbo) alongside Serper API, Exa API, and other external services, leveraging the TaskFlowAI open-source framework to build a robust Multi AI-Agents pipeline.</li>
-        <li>Conducted extensive testing and validation in diverse agricultural environments, ensuring the model’s adaptability and high performance in real-world conditions.</li>
-        <li>Ensured modularity and scalability, allowing easy expansion to support additional crop species and agricultural use cases in the future.</li>
-        <li>Enabled customers to receive their summarized reports directly via email by entering their email address on the UI, ensuring a seamless and convenient user experience.</li>
-      </ul>
-      <p class="tech-stack"><strong>Tech Stack:</strong> Python, PyTorch, Jenkins, AWS, TaskFlowAI, OpenAI, SerperAPI, A100 GPUs, Hugging Face</p>
-      <div class="project-link">
-        <a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
+    <div class="exp-item">
+      <div class="exp-date">2025 — Present</div>
+      <div>
+        <div class="exp-role">Research Engineer, Independent</div>
+        <div class="exp-org">Github(open-source) · Bengaluru, India</div>
+        <div class="exp-desc">Post-training pipelines, reinforcement learning for LLMs, reasoning model research, and inference-time compute. Implementing training objectives and architectures from frontier research. Building toward contributions to large-scale LLM infrastructure.</div>
       </div>
     </div>
-    <div class="item">
-      <h3>🌍 TripPlanner Multi-AI Agents Project</h3>
-      <p><strong>Dec 2024 - Jan 2025</strong></p>
-      <div class="project-tags">
-        <span class="project-tag">Agentic AI</span>
-        <span class="project-tag">NLP</span>
-        <span class="project-tag">Travel Tech</span>
-        <span class="project-tag">Cloud Computing</span>
-        <span class="project-tag">LangChain</span>
-        <span class="project-tag">Personalization</span>
-        <span class="project-tag">Real-Time Data</span>
-        <span class="project-tag">Streamlit UI</span>
-      </div>
-      <ul>
-        <li>Developed an intelligent travel assistant integrating three AI-driven agents to automate and optimize the travel planning experience.</li>
-        <li>Web Research Agent: Gathers comprehensive destination insights, including local attractions, events, weather updates, and essential travel information.</li>
-        <li>Travel Planner Agent: Creates personalized itineraries, suggests appropriate clothing based on real-time weather forecasts, and recommends optimized travel routes.</li>
-        <li>Report Generator Agent: Utilizes GPT-3.5 Turbo to compile a concise and actionable travel report, consolidating all essential details for seamless trip planning.</li>
-        <li>Designed for efficiency and personalization, ensuring travelers receive relevant, well-structured information tailored to their preferences and schedules.</li>
-        <li>Built with modularity and scalability, allowing easy integration with additional travel services, AI enhancements, and real-time data sources.</li>
-        <li>Optimized for travel enthusiasts, business professionals, and frequent flyers, providing an AI-powered solution for hassle-free and well-organized trips.</li>
-      </ul>
-      <p class="tech-stack"><strong>Tech Stack:</strong> Python, TaskFlowAI, OpenAI, GitHub Actions, ECR, EC2, Streamlit, SerperAPI</p>
-      <div class="project-link">
-        <a href="https://github.com/shaheennabi/Production-Ready-TripPlanner-Multi-AI-Agents-Project" target="_blank">View on GitHub</a>
-      </div>
-    </div>
-    <div class="item">
-      <h3>🧠 Instruction Fine-Tuning of Meta LLaMA 3.2 3B</h3>
-      <p><strong>Nov 2024 - Dec 2024</strong></p>
-      <div class="project-tags">
-        <span class="project-tag">NLP</span>
-        <span class="project-tag">Fine-Tuning</span>
-        <span class="project-tag">Regional Language</span>
-        <span class="project-tag">Open Source</span>
-        <span class="project-tag">LoRA</span>
-        <span class="project-tag">Kannada NLP</span>
-        <span class="project-tag">Model Optimization</span>
-        <span class="project-tag">Open-Source Contribution</span>
-      </div>
-      <ul>
-        <li>Fine-tuned the Meta LLaMA 3.2-3B Instruct model using LoRA (Low-Rank Adaptation) and 4-bit quantization, enhancing its ability to generate context-aware responses in Kannada.</li>
-        <li>Focused on improving the model’s proficiency in understanding and generating highly relevant, instruction-following responses in conversational inputs.</li>
-        <li>Utilized the Hugging Face dataset charanhu/kannada-instruct-dataset-390k to refine contextual accuracy and linguistic fluency.</li>
-        <li>Pushed the fine-tuned model to the Hugging Face Hub, where it is actively used by hundreds of developers monthly for Kannada NLP applications.</li>
-        <li>Developed using the Unsloth framework and trained on Google Colab Tesla T4 GPU, ensuring an efficient fine-tuning process.</li>
-        <li>Merged the base model and fine-tuned model into 16-bit floating point (FP16) for optimized deployment and inference.</li>
-      </ul>
-      <p class="tech-stack"><strong>Tech Stack:</strong> Python, Unsloth, QLoRA, Instruction Fine-Tuning, SFT, Hugging Face, Transformers, TRL, Quantization, AWS</p>
-      <div class="project-link">
-        <a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">View on GitHub</a>
-      </div>
-    </div>
-    <div class="view-all-projects">
-      <a href="#projects">View All Projects</a>
-    </div>
-  </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming & Tools:</strong> Python, SQL, Linux, Git, Docker, Data Structures & Algorithms, Databases, <a href="https://leetcode.com/u/ishaheen333/" target="_blank">LeetCode</a></li>
-      <li><strong>Machine Learning & AI:</strong> Deep Learning, Computer Vision, Natural Language Processing, Large Language Models, Transformer Models, Diffusion Models, Deep Reinforcement Learning, Multi-agent Systems, Quantization, Time Series Analysis, Generative AI, MLOps, LLMOps, RAG, LoRA, QLoRA, SFT, Instruction Fine-Tuning</li>
-      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, Keras, LangChain, Unsloth, Hugging Face, Transformers, TRL, FAISS, MLflow, FastAPI, Streamlit</li>
-      <li><strong>DevOps & CI/CD:</strong> DevOps, Continuous Integration/Continuous Delivery, Jenkins, Kubernetes, GitHub Actions, DVC, Airflow</li>
-      <li><strong>Cloud & Infrastructure:</strong> AWS (S3, EC2, ECR, SageMaker), Microsoft Azure, System Designing, Big Data, NVIDIA A100 GPUs, Google Colab (Tesla T4)</li>
-      <li><strong>Other:</strong> Start-up Leadership, Statistics, Probability, APIs, TaskFlowAI, OpenAI, SerperAPI</li>
-    </ul>
-  </section>
+    <div class="exp-item">
+      <div class="exp-date">Jan – Mar 2025</div>
+      <div>
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-org">iNeuron.ai · Bengaluru, India</div>
+        <div class="exp-desc">Object detection pipelines on NVIDIA A100. Open-sourced a 25K annotated image dataset. Designed cloud inference infrastructure on AWS ECR, EC2, and Jenkins.</div>
+      </div>
+    </div>
 
-  <section id="education">
+    <div class="exp-item">
+      <div class="exp-date">2022</div>
+      <div>
+        <div class="exp-role">Founder</div>
+        <div class="exp-org">Lasso Pacific Pvt Ltd · Anantnag, J&amp;K, India</div>
+        <div class="exp-desc">AI and robotics edtech platform for rural learners. Reached 2M+ annual visitors organically. Closed after one year; proceeds reinvested into free tech literacy programs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section" id="education">
     <h2>Education</h2>
-    <div class="education-item">
-      <i class="fas fa-graduation-cap"></i>
-      <div class="education-details">
-        <h3>Indira Gandhi National Open University</h3>
-        <p>Bachelor of Arts - Art Studies | Jan 2025 - Jan 2028</p>
+
+    <div class="edu-item">
+      <div class="edu-date">2025 – 2028</div>
+      <div>
+        <div class="edu-deg">Bachelor of Arts</div>
+        <div class="edu-inst">Indira Gandhi National Open University</div>
       </div>
     </div>
-    <div class="education-item">
-      <i class="fas fa-laptop-code"></i>
-      <div class="education-details">
-        <h3>iNeuron Intelligence</h3>
-        <p>Full Stack Data Science | Oct 2021 - Oct 2022</p>
+
+    <div class="edu-item">
+      <div class="edu-date">2021 – 2022</div>
+      <div>
+        <div class="edu-deg">Full Stack Data Science</div>
+        <div class="edu-inst">iNeuron Intelligence</div>
       </div>
     </div>
-    <div class="education-item">
-      <i class="fas fa-school"></i>
-      <div class="education-details">
-        <h3>Jammu and Kashmir Board of School Education</h3>
-        <p>High School Diploma, Mathematics and Computer Science | Apr 2021 - Oct 2023</p>
+
+    <div class="edu-item">
+      <div class="edu-date">2021 – 2023</div>
+      <div>
+        <div class="edu-deg">High School Diploma — Mathematics &amp; Computer Science</div>
+        <div class="edu-inst">J&amp;K Board of School Education</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="volunteering">
-    <h2>Volunteering</h2>
-    <div class="item">
-      <h3>Cyber Fraud Prevention Volunteer – Cybersecurity Outreach, Rural India (Self-Organized)</h3>
-      <p><strong>January 2020 - December 2023</strong> | Social Services</p>
-      <ul>
-        <li>Initiated a grassroots campaign to educate rural Indian communities on cybersecurity threats and scam prevention.</li>
-        <li>Conducted one-on-one sessions and workshops, teaching digital safety practices like phishing detection and two-factor authentication.</li>
-        <li>Prevented numerous scams, saving victims tens of lakhs of rupees through education and intervention.</li>
-        <li>Empowered individuals with practical digital literacy, fostering confidence and sparking interest in digital safety.</li>
-      </ul>
-    </div>
-    <div class="item">
-      <h3>Senior Writer – Shexion</h3>
-      <p><strong>January 2020 - October 2020</strong> | Education</p>
-      <ul>
-        <li>Volunteered as a cybersecurity content writer for Shexion.com, creating articles and roadmaps for aspiring cybersecurity professionals.</li>
-        <li>Authored guides on networking, Linux, ethical hacking, and tools, plus analyses of cyber incidents like WannaCry and Pegasus.</li>
-        <li>Reached tens of thousands of readers, providing resources that supported career starters in cybersecurity.</li>
-        <li>Received feedback crediting content with clarity and career guidance, reinforcing my passion for tech education.</li>
-      </ul>
-    </div>
-    <div class="item">
-      <h3>Writer – Lasso Pacific Pvt Ltd</h3>
-      <p><strong>March 2022 - October 2022</strong> | Science and Technology</p>
-      <ul>
-        <li>Created educational content on Python, machine learning, computer vision, and autonomous systems for beginners.</li>
-        <li>Authored career roadmaps to make AI accessible, especially for rural students with limited resources.</li>
-        <li>Provided personalized career advice, encouraging young learners to pursue AI and tech careers.</li>
-        <li>Contributed to Lasso Pacific’s 2M+ annual visitors with beginner-friendly AI and data science content.</li>
-      </ul>
-    </div>
-  </section>
+  <footer>
+    <span>Shaheen Nabi · Research Engineer</span>
+    <span>Last updated: March 2026</span>
+  </footer>
 
-  <section id="recommendations">
-    <h2>Recommendations</h2>
-    <div class="recommendation-card">
-      <h3>Izhar Ashiq</h3>
-      <p><strong>January 2, 2025</strong> | Worked with Shaheen on the same team</p>
-      <blockquote>
-        I had the privilege of working with Shaheen Nabi on cutting-edge AI projects tailored for direct deployment to our U.S. customers. As a team lead, Shaheen showcased exceptional leadership, combining technical expertise with strategic acumen in marketing and branding. His remarkable work in successfully branding Lasso Pacific is a testament to his visionary approach.
-        Even under budget constraints, Shaheen motivated the team to maximize resources and maintain a focus on continuous improvement. His dedication, problem-solving skills, and collaborative mindset were key to transforming our projects into production-ready solutions.
-        I highly recommend Shaheen Nabi as a visionary data scientist and a dynamic leader who excels in delivering impactful AI solutions across diverse challenges.
-      </blockquote>
-    </div>
-    <div class="recommendation-card">
-      <h3>Rajahat Nabi</h3>
-      <p><strong>December 28, 2024</strong> | Worked with Shaheen on the same team</p>
-      <blockquote>
-        He was deeply passionate about the problem we aimed to solve—making AI and autonomous vehicle education accessible and affordable for people worldwide. His dedication stood out as he worked tirelessly to bring our product to market, demonstrating a deep understanding of branding and strategy, as seen in the way he established Lasso Pacific. He even took the initiative to offer free educational materials to some individuals, ensuring broader access.
-        We also collaborated on cybersecurity practices, where his technical skills and proactive mindset shone. I highly recommend him as a passionate developer, a visionary thinker, and someone with a talent for creating impactful products.
-      </blockquote>
-    </div>
-  </section>
-
-  <section id="work-together" class="work-together">
-    <h2>Let's Work Together</h2>
-    <p>I am always excited to explore new opportunities, collaborate on impactful projects, or just talk tech. Feel free to reach out if you think we can build something great together.</p>
-    <a href="mailto:ishaheennabi333@gmail.com"><span>Get in Touch</span></a>
-  </section>
 </div>
-
-<footer>
-  © 2025 Shaheen Nabi. All rights reserved.
-</footer>
-
 </body>
 </html>

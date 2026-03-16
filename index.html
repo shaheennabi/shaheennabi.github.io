@@ -1,4 +1,4 @@
-n<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -33,8 +33,8 @@ n<!DOCTYPE html>
       color: var(--text);
       font-family: var(--sans);
       font-weight: 300;
-      font-size: 16.5px;
-      line-height: 1.78;
+      font-size: 18px;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -47,9 +47,9 @@ n<!DOCTYPE html>
 
     /* ── PAGE ── */
     .page {
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 52px 40px 100px;
+      padding: 52px 48px 100px;
       animation: fadeIn 0.45s ease;
     }
 
@@ -79,7 +79,7 @@ n<!DOCTYPE html>
     .social-icons {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 13px;
     }
 
     .social-icons a {
@@ -91,20 +91,20 @@ n<!DOCTYPE html>
     .social-icons a:hover { color: var(--text-mid); text-decoration: none; }
 
     .social-icons svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       fill: currentColor;
     }
 
     .topbar-nav {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       list-style: none;
     }
 
     .topbar-nav a {
       font-family: var(--sans);
-      font-size: 0.86rem;
+      font-size: 0.92rem;
       font-weight: 400;
       color: var(--text-dim);
       text-decoration: none;
@@ -116,17 +116,17 @@ n<!DOCTYPE html>
     /* ── PROFILE ── */
     .profile {
       display: grid;
-      grid-template-columns: 1fr 148px;
-      gap: 48px;
+      grid-template-columns: 1fr 160px;
+      gap: 52px;
       align-items: start;
-      padding-bottom: 48px;
+      padding-bottom: 52px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 52px;
+      margin-bottom: 56px;
     }
 
     .profile-photo {
-      width: 148px;
-      height: 148px;
+      width: 160px;
+      height: 160px;
       border-radius: 3px;
       object-fit: cover;
       border: 1px solid var(--border);
@@ -135,28 +135,28 @@ n<!DOCTYPE html>
 
     h1 {
       font-family: var(--serif);
-      font-size: 2.15rem;
+      font-size: 2.4rem;
       font-weight: 400;
       line-height: 1.12;
       color: var(--text);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .profile-subtitle {
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       color: var(--text-dim);
       font-family: var(--mono);
-      margin-bottom: 24px;
+      margin-bottom: 26px;
       letter-spacing: 0.02em;
     }
 
     .profile-bio {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--text-mid);
-      line-height: 1.84;
+      line-height: 1.86;
     }
 
-    .profile-bio p + p { margin-top: 15px; }
+    .profile-bio p + p { margin-top: 16px; }
 
     .profile-bio strong {
       color: var(--text);
@@ -164,15 +164,15 @@ n<!DOCTYPE html>
     }
 
     /* ── SECTION ── */
-    .section { margin-bottom: 56px; }
+    .section { margin-bottom: 60px; }
 
     h2 {
       font-family: var(--serif);
-      font-size: 1.22rem;
+      font-size: 1.35rem;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 22px;
-      padding-bottom: 9px;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       letter-spacing: 0.005em;
     }
@@ -185,66 +185,63 @@ n<!DOCTYPE html>
 
     .interests-list li {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       align-items: baseline;
-      padding: 11px 8px;
+      padding: 13px 8px;
       border-bottom: 1px solid var(--border-light);
-      font-size: 0.93rem;
-      line-height: 1.65;
+      font-size: 0.97rem;
+      line-height: 1.68;
       border-radius: 2px;
       transition: background 0.12s;
     }
 
-    .interests-list li:hover {
-      background: var(--bg-subtle);
-    }
-
+    .interests-list li:hover { background: var(--bg-subtle); }
     .interests-list li:last-child { border-bottom: none; }
 
     .interests-list .topic {
       font-weight: 500;
       color: var(--text);
-      min-width: 215px;
+      min-width: 230px;
       flex-shrink: 0;
-      font-size: 0.88rem;
+      font-size: 0.93rem;
     }
 
     .interests-list .detail {
       color: var(--text-dim);
-      font-size: 0.87rem;
+      font-size: 0.92rem;
     }
 
     /* ── OUTPUTS ── */
     .output-item {
-      padding: 22px 0;
+      padding: 24px 0;
       border-bottom: 1px solid var(--border-light);
     }
     .output-item:last-child { border-bottom: none; }
 
     .output-meta {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.71rem;
       color: var(--text-dim);
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .output-title {
       font-family: var(--serif);
-      font-size: 1.08rem;
+      font-size: 1.15rem;
       font-weight: 400;
       color: var(--text);
       line-height: 1.38;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .output-desc {
-      font-size: 0.87rem;
+      font-size: 0.92rem;
       color: var(--text-dim);
-      line-height: 1.72;
-      margin-bottom: 11px;
-      max-width: 620px;
+      line-height: 1.74;
+      margin-bottom: 12px;
+      max-width: 680px;
     }
 
     .output-links {
@@ -255,11 +252,11 @@ n<!DOCTYPE html>
 
     .output-links a {
       font-family: var(--mono);
-      font-size: 0.67rem;
+      font-size: 0.7rem;
       color: var(--link);
       background: #eff4ff;
       border: 1px solid #c7d7f0;
-      padding: 3px 11px;
+      padding: 3px 12px;
       border-radius: 2px;
       text-decoration: none;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
@@ -274,64 +271,64 @@ n<!DOCTYPE html>
     /* ── EXPERIENCE ── */
     .exp-item {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 24px;
-      padding: 18px 0;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      padding: 20px 0;
       border-bottom: 1px solid var(--border-light);
     }
     .exp-item:last-child { border-bottom: none; }
 
     .exp-date {
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.73rem;
       color: var(--text-dim);
       padding-top: 2px;
       line-height: 1.5;
     }
 
     .exp-role {
-      font-size: 0.93rem;
+      font-size: 0.97rem;
       font-weight: 500;
       color: var(--text);
       margin-bottom: 2px;
     }
 
     .exp-org {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-dim);
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .exp-desc {
-      font-size: 0.87rem;
+      font-size: 0.92rem;
       color: var(--text-dim);
-      line-height: 1.68;
+      line-height: 1.7;
     }
 
     /* ── EDUCATION ── */
     .edu-item {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 24px;
-      padding: 13px 0;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      padding: 15px 0;
       border-bottom: 1px solid var(--border-light);
     }
     .edu-item:last-child { border-bottom: none; }
 
     .edu-date {
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.73rem;
       color: var(--text-dim);
     }
 
     .edu-deg {
-      font-size: 0.92rem;
+      font-size: 0.97rem;
       font-weight: 500;
       color: var(--text);
     }
 
     .edu-inst {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-dim);
     }
 
@@ -341,10 +338,10 @@ n<!DOCTYPE html>
       border: 1px solid var(--border);
       border-left: 3px solid #c8b89a;
       border-radius: 2px;
-      padding: 14px 18px;
-      font-size: 0.87rem;
+      padding: 15px 20px;
+      font-size: 0.92rem;
       color: var(--text-mid);
-      line-height: 1.72;
+      line-height: 1.74;
       margin-top: 24px;
     }
     .oss-note strong { color: var(--text); font-weight: 500; }
@@ -355,7 +352,7 @@ n<!DOCTYPE html>
       padding-top: 20px;
       border-top: 1px solid var(--border-light);
       font-family: var(--mono);
-      font-size: 0.67rem;
+      font-size: 0.7rem;
       color: var(--text-dim);
       display: flex;
       justify-content: space-between;
@@ -363,11 +360,12 @@ n<!DOCTYPE html>
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 620px) {
-      .page { padding: 30px 20px 80px; }
+    @media (max-width: 680px) {
+      .page { padding: 30px 22px 80px; }
+      body { font-size: 16px; }
       .topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
       .profile { grid-template-columns: 1fr; gap: 28px; }
-      .profile-photo { width: 108px; height: 108px; }
+      .profile-photo { width: 110px; height: 110px; }
       .exp-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
       .interests-list li { flex-direction: column; gap: 3px; }
       .interests-list .topic { min-width: unset; }
@@ -382,7 +380,7 @@ n<!DOCTYPE html>
   <div class="topbar">
     <div class="topbar-left">
       <div class="social-icons">
-        <a href="/cdn-cgi/l/email-protection#b4d0d1c2c7dcd5dcd1d1da84f4d3d9d5ddd89ad7dbd9" title="Email">
+        <a href="mailto:devshaheen0@gmail.com" title="Email">
           <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
         <a href="https://github.com/shaheennabi" target="_blank" title="GitHub">
@@ -415,22 +413,22 @@ n<!DOCTYPE html>
   <div class="profile" id="about">
     <div>
       <h1>Shaheen Nabi</h1>
-      <div class="profile-subtitle">Research Engineer . India</div>
+      <div class="profile-subtitle">Research Engineer · India</div>
       <div class="profile-bio">
         <p>
-          Hi! 👋 I'm Shaheen, a Research Engineer based in India, working on <strong>reasoning and thinking models</strong> — how large language models perform multi-step reasoning, and how training and post-training methods can improve their reliability, efficiency, and scalability.
+          Hi! 👋 I'm Shaheen, a Research Engineer based in India, working on <strong>reasoning and thinking models</strong> — understanding how large language models perform multi-step reasoning and how training and post-training methods can improve their reliability, efficiency, and scalability.
         </p>
         <p>
-          I study reasoning across the full model development pipeline: from pre-training data composition and architectural choices to the post-training systems that shape model behavior. My primary focus is the post-training stack — SFT, preference optimization, RL-based training (RLVR and related approaches), and test-time compute strategies that enable models to reason more effectively without requiring larger models.
+          I study reasoning across the full model development pipeline: from pre-training data composition and architectural choices to the post-training systems that shape model behavior. My primary focus is the post-training stack — supervised fine-tuning (SFT), preference optimization, RL-based training (including RLVR and related approaches), and test-time compute strategies such as agentic scaffolding that enable models to reason more effectively without requiring larger models.
         </p>
         <p>
-          Alongside training methods, I'm interested in the <strong>interpretability of reasoning models</strong> — studying the internal mechanisms and representations that support multi-step reasoning, and using mechanistic analysis to diagnose failures such as shortcut reasoning, reward hacking, and unfaithful chain-of-thought.
+          Alongside training methods, I'm interested in the <strong>interpretability of reasoning models</strong> — studying the internal mechanisms and representations that support multi-step reasoning, and using mechanistic analysis to diagnose failures such as shortcut reasoning, reward hacking, or unfaithful chain-of-thought.
         </p>
         <p>
-          My goal is to build and study systems that make reasoning models more reliable, more efficient, and easier to scale — combining post-training, inference-time strategies, rigorous evaluation, and mechanistic analysis to better understand how reasoning emerges and how it can be improved in practice.
+          My goal is to build and study systems that make reasoning models more reliable, more efficient, and easier to scale — combining post-training, inference-time reasoning strategies, rigorous evaluation and benchmarking, and mechanistic analysis to better understand how reasoning emerges and how it can be improved in practice.
         </p>
         <p>
-          I contribute to open source through <a href="https://github.com/shaheennabi/" target="_blank">code</a> and <a href="https://substack.com/@shaheennabi/posts" target="_blank">writing</a>, and am actively working toward pushing contributions into large LLM infrastructure and post-training frameworks.
+          I contribute to open source through <a href="https://github.com/shaheennabi/" target="_blank">code</a> and <a href="https://substack.com/@shaheennabi/posts" target="_blank">writing</a>, and am actively working toward contributions to large-scale LLM infrastructure and post-training frameworks, with a focus on end-to-end implementations of reasoning-focused training pipelines.
         </p>
       </div>
     </div>
@@ -475,7 +473,7 @@ n<!DOCTYPE html>
   <!-- OUTPUTS -->
   <div class="section" id="outputs">
     <h2>Outputs</h2>
-    <p style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--mono); margin-bottom: 24px; letter-spacing: 0.02em;">
+    <p style="font-size: 0.82rem; color: var(--text-dim); font-family: var(--mono); margin-bottom: 24px; letter-spacing: 0.02em;">
       Open-source repositories, writing, and models — in lieu of publications.
     </p>
 
@@ -594,4 +592,9 @@ n<!DOCTYPE html>
 
   <footer>
     <span>Shaheen Nabi · Research Engineer</span>
-    <span>Last updated: March 2026
+    <span>Last updated: March 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

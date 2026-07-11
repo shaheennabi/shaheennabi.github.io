@@ -1,599 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shaheen Nabi — Research Engineer</title>
-  <meta name="description" content="Shaheen Nabi — Research Engineer working on post-training, reasoning models, and inference-time compute for large language models.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shaheen Nabi — Research Engineer working on LLM post-training, reasoning models, and reinforcement learning.">
+<title>Shaheen Nabi</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --text: #222831;
+    --muted: #5b6270;
+    --link: #2a5db0;
+    --rule: #e5e7eb;
+    --accent: #1f7a5c;
+    --maxw: 720px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Noto Serif", serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--link); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding: 56px 20px 80px;
+  }
+  /* nav */
+  nav.top{
+    display:flex;
+    gap:22px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  nav.top a{ color:var(--muted); }
+  nav.top a:hover{ color:var(--link); }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  /* header / profile block */
+  header.profile{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+    margin-bottom:8px;
+  }
+  header.profile img{
+    width:132px;
+    height:132px;
+    border-radius:6px;
+    object-fit:cover;
+    flex-shrink:0;
+    border:1px solid var(--rule);
+  }
+  .id h1{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:27px;
+    font-weight:700;
+    margin:0 0 6px;
+    letter-spacing:-.01em;
+  }
+  .id .role{
+    font-size:16px;
+    color:var(--muted);
+    margin-bottom:2px;
+  }
+  .id .loc{
+    font-size:15px;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .contacts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:13.5px;
+  }
+  .contacts a{ color:var(--link); white-space:nowrap; }
 
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --bg-subtle: #f4f2ef;
-      --text: #1a1916;
-      --text-mid: #3d3b38;
-      --text-dim: #7a7870;
-      --link: #1d4ed8;
-      --link-hover: #1e3a8a;
-      --border: #e2e0db;
-      --border-light: #eeece8;
-      --serif: 'EB Garamond', Georgia, serif;
-      --mono: 'IBM Plex Mono', monospace;
-      --sans: 'IBM Plex Sans', sans-serif;
-    }
+  h2.section{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:15px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:var(--text);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:8px;
+    margin:46px 0 18px;
+  }
+  h2.section .emoji{ margin-right:8px; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+  p{ margin:0 0 14px; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
+  ul.plain{ list-style:none; margin:0; padding:0; }
+  ul.plain li{
+    margin-bottom:14px;
+    padding-left:18px;
+    position:relative;
+  }
+  ul.plain li::before{
+    content:"–";
+    position:absolute;
+    left:0;
+    color:var(--muted);
+  }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    a:hover { color: var(--link-hover); text-decoration: underline; }
+  .entry-title{ font-weight:700; }
+  .entry-meta{
+    display:block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:2px;
+    margin-bottom:5px;
+  }
+  .entry-desc{ font-size:16px; }
+  .links-row{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:13px;
+    margin-top:6px;
+  }
+  .links-row a{ margin-right:14px; }
 
-    /* ── PAGE ── */
-    .page {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 52px 48px 100px;
-      animation: fadeIn 0.45s ease;
-    }
+  .skills-grid{
+    display:grid;
+    grid-template-columns: 150px 1fr;
+    row-gap:10px;
+    column-gap:14px;
+    font-size:15.5px;
+  }
+  .skills-grid dt{
+    font-weight:700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:13px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    padding-top:2px;
+  }
+  .skills-grid dd{ margin:0; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  .research-grid li .entry-title{ display:inline; }
 
-    /* ── TOP BAR ── */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 52px;
-      flex-wrap: wrap;
-      gap: 14px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-light);
-    }
+  footer{
+    margin-top:60px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size:12.5px;
+    color:var(--muted);
+  }
 
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+  @media (max-width: 560px){
+    header.profile{ flex-direction:column; align-items:flex-start; }
+    .skills-grid{ grid-template-columns: 1fr; }
+    .skills-grid dt{ margin-bottom:-4px; }
+  }
 
-    .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      color: #b0ada6;
-      transition: color 0.15s;
-    }
-    .social-icons a:hover { color: var(--text-mid); text-decoration: none; }
-
-    .social-icons svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .topbar-nav {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .topbar-nav a {
-      font-family: var(--sans);
-      font-size: 0.92rem;
-      font-weight: 400;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.15s;
-      letter-spacing: 0.01em;
-    }
-    .topbar-nav a:hover { color: var(--text); text-decoration: none; }
-
-    /* ── PROFILE ── */
-    .profile {
-      display: grid;
-      grid-template-columns: 1fr 160px;
-      gap: 52px;
-      align-items: start;
-      padding-bottom: 52px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 56px;
-    }
-
-    .profile-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 3px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      filter: grayscale(8%);
-    }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: 2.4rem;
-      font-weight: 400;
-      line-height: 1.12;
-      color: var(--text);
-      margin-bottom: 5px;
-    }
-
-    .profile-subtitle {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-family: var(--mono);
-      margin-bottom: 26px;
-      letter-spacing: 0.02em;
-    }
-
-    .profile-bio {
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      line-height: 1.86;
-    }
-
-    .profile-bio p + p { margin-top: 16px; }
-
-    .profile-bio strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    /* ── SECTION ── */
-    .section { margin-bottom: 60px; }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 24px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: 0.005em;
-    }
-
-    /* ── RESEARCH INTERESTS ── */
-    .interests-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .interests-list li {
-      display: flex;
-      gap: 24px;
-      align-items: baseline;
-      padding: 13px 8px;
-      border-bottom: 1px solid var(--border-light);
-      font-size: 0.97rem;
-      line-height: 1.68;
-      border-radius: 2px;
-      transition: background 0.12s;
-    }
-
-    .interests-list li:hover { background: var(--bg-subtle); }
-    .interests-list li:last-child { border-bottom: none; }
-
-    .interests-list .topic {
-      font-weight: 500;
-      color: var(--text);
-      min-width: 230px;
-      flex-shrink: 0;
-      font-size: 0.93rem;
-    }
-
-    .interests-list .detail {
-      color: var(--text-dim);
-      font-size: 0.92rem;
-    }
-
-    /* ── OUTPUTS ── */
-    .output-item {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .output-item:last-child { border-bottom: none; }
-
-    .output-meta {
-      font-family: var(--mono);
-      font-size: 0.71rem;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .output-title {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.38;
-      margin-bottom: 7px;
-    }
-
-    .output-desc {
-      font-size: 0.92rem;
-      color: var(--text-dim);
-      line-height: 1.74;
-      margin-bottom: 12px;
-      max-width: 680px;
-    }
-
-    .output-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .output-links a {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--link);
-      background: #eff4ff;
-      border: 1px solid #c7d7f0;
-      padding: 3px 12px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-    .output-links a:hover {
-      background: #dbeafe;
-      border-color: var(--link-hover);
-      color: var(--link-hover);
-      text-decoration: none;
-    }
-
-    /* ── EXPERIENCE ── */
-    .exp-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 28px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .exp-item:last-child { border-bottom: none; }
-
-    .exp-date {
-      font-family: var(--mono);
-      font-size: 0.73rem;
-      color: var(--text-dim);
-      padding-top: 2px;
-      line-height: 1.5;
-    }
-
-    .exp-role {
-      font-size: 0.97rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .exp-org {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin-bottom: 8px;
-    }
-
-    .exp-desc {
-      font-size: 0.92rem;
-      color: var(--text-dim);
-      line-height: 1.7;
-    }
-
-    /* ── EDUCATION ── */
-    .edu-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 28px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .edu-item:last-child { border-bottom: none; }
-
-    .edu-date {
-      font-family: var(--mono);
-      font-size: 0.73rem;
-      color: var(--text-dim);
-    }
-
-    .edu-deg {
-      font-size: 0.97rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .edu-inst {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-    }
-
-    /* ── OSS NOTE ── */
-    .oss-note {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      border-left: 3px solid #c8b89a;
-      border-radius: 2px;
-      padding: 15px 20px;
-      font-size: 0.92rem;
-      color: var(--text-mid);
-      line-height: 1.74;
-      margin-top: 24px;
-    }
-    .oss-note strong { color: var(--text); font-weight: 500; }
-
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 64px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-light);
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      .page { padding: 30px 22px 80px; }
-      body { font-size: 16px; }
-      .topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .profile { grid-template-columns: 1fr; gap: 28px; }
-      .profile-photo { width: 110px; height: 110px; }
-      .exp-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
-      .interests-list li { flex-direction: column; gap: 3px; }
-      .interests-list .topic { min-width: unset; }
-      footer { flex-direction: column; gap: 6px; }
-    }
-  </style>
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior:auto !important; }
+  }
+</style>
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <div class="social-icons">
-        <a href="mailto:devshaheen0@gmail.com" title="Email">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-        <a href="https://github.com/shaheennabi" target="_blank" title="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/shaheennabi/" target="_blank" title="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://x.com/DevShaheen1" target="_blank" title="X / Twitter">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://huggingface.co/devshaheen" target="_blank" title="Hugging Face">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-3.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6.5 5.5s1 2 3 2 3-2 3-2H9z"/></svg>
-        </a>
-        <a href="https://substack.com/@shaheennabi" target="_blank" title="Substack">
-          <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-        </a>
-      </div>
-    </div>
-    <ul class="topbar-nav">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#outputs">Outputs</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
-  </div>
+  <nav class="top">
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+  </nav>
 
-  <!-- PROFILE -->
-  <div class="profile" id="about">
-    <div>
+  <header class="profile">
+    <img src="https://shaheennabi.github.io/Shaheen-Nabi.jpg" alt="Shaheen Nabi">
+    <div class="id">
       <h1>Shaheen Nabi</h1>
-      <div class="profile-subtitle">Research Engineer · India</div>
-      <div class="profile-bio">
-        <p>
-          Hi! 👋 I'm Shaheen, a Research Engineer based in India, working on <strong>reasoning and thinking models</strong> — understanding how large language models perform multi-step reasoning and how training and post-training methods can improve their reliability, efficiency, and scalability.
-        </p>
-        <p>
-          I study reasoning across the full model development pipeline: from pre-training data composition and architectural choices to the post-training systems that shape model behavior. My primary focus is the post-training stack — supervised fine-tuning (SFT), preference optimization, RL-based training (including RLVR and related approaches), and test-time compute strategies such as agentic scaffolding that enable models to reason more effectively without requiring larger models.
-        </p>
-        <p>
-          Alongside training methods, I'm interested in the <strong>interpretability of reasoning models</strong> — studying the internal mechanisms and representations that support multi-step reasoning, and using mechanistic analysis to diagnose failures such as shortcut reasoning, reward hacking, or unfaithful chain-of-thought.
-        </p>
-        <p>
-          My goal is to build and study systems that make reasoning models more reliable, more efficient, and easier to scale — combining post-training, inference-time reasoning strategies, rigorous evaluation and benchmarking, and mechanistic analysis to better understand how reasoning emerges and how it can be improved in practice.
-        </p>
-        <p>
-          I contribute to open source through <a href="https://github.com/shaheennabi/" target="_blank">code</a> and <a href="https://substack.com/@shaheennabi/posts" target="_blank">writing</a>, and am actively working toward contributions to large-scale LLM infrastructure and post-training frameworks, with a focus on end-to-end implementations of reasoning-focused training pipelines.
-        </p>
+      <div class="role">Research @ Indian Institute of Science | LLM Post-Training, RLVR, Mechanistic Interpretability</div>
+      <div class="loc">Bengaluru, Karnataka, India</div>
+      <div class="contacts">
+        <a href="mailto:devshaheen0@gmail.com">Email</a>
+        <a href="https://github.com/shaheennabi">GitHub</a>
+        <a href="https://www.linkedin.com/in/shaheennabi/">LinkedIn</a>
+        <a href="https://x.com/DevShaheen1">X / Twitter</a>
+        <a href="https://huggingface.co/devshaheen">Hugging Face</a>
+        <a href="https://substack.com/@shaheennabi">Substack</a>
       </div>
     </div>
-    <img src="Shaheen-Nabi.jpg" alt="Shaheen Nabi" class="profile-photo">
-  </div>
+  </header>
 
-  <!-- RESEARCH -->
-  <div class="section" id="research">
-    <h2>Research Interests</h2>
-    <ul class="interests-list">
-      <li>
-        <span class="topic">Scaling Foundation Models</span>
-        <span class="detail">Data composition, quality, and curation at scale. How pre-training decisions — compute allocation, data mixtures, and training dynamics — shape the capabilities available to post-training.</span>
-      </li>
-      <li>
-        <span class="topic">Continual &amp; Mid-Training</span>
-        <span class="detail">How continued pre-training and mid-training interventions affect the reasoning qualities that emerge in later stages. The relationship between training phase, data distribution, and downstream reasoning behavior.</span>
-      </li>
-      <li>
-        <span class="topic">Architectures for Reasoning</span>
-        <span class="detail">How architectural choices — hybrid MoE, state space models, and dense-sparse combinations — affect reasoning capabilities. Studying new open model families to understand what architectural decisions make models more or less amenable to post-training reasoning improvements.</span>
-      </li>
-      <li>
-        <span class="topic">Post-Training Pipelines</span>
-        <span class="detail">RLVR, SFT, and preference optimization. How reward signals, data quality, and training dynamics in post-training interact with the capabilities laid down during pre-training.</span>
-      </li>
-      <li>
-        <span class="topic">Test-Time Compute &amp; Efficient Reasoning</span>
-        <span class="detail">Making models think better at lower cost. Process reward models, adaptive compute budgeting, and search-guided generation. The core question: how do we build models that know <em>when</em> to stop thinking, not just how to think longer.</span>
-      </li>
-      <li>
-        <span class="topic">Interpretability of Reasoning</span>
-        <span class="detail">Studying the internal mechanisms and representations that support multi-step reasoning. Using mechanistic analysis to diagnose failure modes — shortcut reasoning, reward hacking, and unfaithful chain-of-thought — and understand how reasoning emerges in large models.</span>
-      </li>
-      <li>
-        <span class="topic">Emerging Reasoning Architectures</span>
-        <span class="detail">Actively following new directions: small reasoning models, hierarchical reasoning architectures, and novel thinking paradigms. Interested in how these approaches can inform the next generation of frontier reasoning models and open new possibilities on hard benchmarks.</span>
-      </li>
-    </ul>
-  </div>
+  <h2 class="section" id="about"><span class="emoji">💬</span>About Me</h2>
+  <ul class="plain">
+    <li>I am a Researcher at the <strong>Indian Institute of Science (IISc)</strong>, working on reinforcement learning, model distillation, and mechanistic interpretability for reasoning and language models.</li>
+    <li>My research spans the full stack around <strong>reasoning models</strong> — post-training methods that build reasoning (RLVR, preference optimization, reasoning distillation), the test-time strategies that make it efficient (compute allocation, deciding when to stop deliberating), and the empirical/evaluation work needed to trust any of it. Right now I'm going deeper into <strong>mechanistic interpretability</strong> — studying the internal circuits and representations behind multi-step reasoning in large language models, to understand failure modes like reward hacking and unfaithful chain-of-thought well enough to actually fix them, not just detect them. A specific thread I'm pulling on: disentangling <strong>memorization from genuine reasoning</strong> mechanistically — which circuits are doing lookup versus computation — and using that understanding to work toward <strong>guiding reasoning safely</strong>, so models can be steered away from unfaithful or unsafe reasoning traces rather than just penalized after the fact.</li>
+    <li>I build and release everything in the open — training/eval systems, checkpoints, and datasets — in lieu of formal publications, via <a href="https://github.com/shaheennabi">GitHub</a> and <a href="https://substack.com/@shaheennabi/posts">Substack</a>.</li>
+  </ul>
 
-  <!-- OUTPUTS -->
-  <div class="section" id="outputs">
-    <h2>Outputs</h2>
-    <p style="font-size: 0.82rem; color: var(--text-dim); font-family: var(--mono); margin-bottom: 24px; letter-spacing: 0.02em;">
-      Open-source repositories, writing, and models — in lieu of publications.
-    </p>
+  <h2 class="section" id="publications"><span class="emoji">📝</span>Publications</h2>
+  <ul class="plain">
+    <li><em>(in-coming)</em></li>
+    <li><em>(in-coming)</em></li>
+  </ul>
 
-    <div class="output-item">
-      <div class="output-meta">2025 · Writing · Substack</div>
-      <div class="output-title">Reinforcement Learning Foundations</div>
-      <div class="output-desc">A technical introduction to the mathematical foundations of RL — MDPs, Bellman equations, policy gradients, and value functions — written for researchers entering the field from a supervised learning background.</div>
-      <div class="output-links">
-        <a href="https://substack.com/home/post/p-181403736" target="_blank">Read ↗</a>
-      </div>
-    </div>
+  <h2 class="section" id="experience"><span class="emoji">💻</span>Experiences</h2>
+  <ul class="plain">
+    <li><em>2026.06 - now</em>: Researcher, Reinforcement Learning &amp; Reasoning, <a href="https://www.iisc.ac.in/">Indian Institute of Science (IISc)</a>, Bengaluru.</li>
+    <li><em>2025.12 - now</em>: Machine Learning Engineer, LLM Post-Training &amp; RL, Freelance, Remote.</li>
+    <li><em>2024.10 - 2025.10</em>: Artificial Intelligence Consultant, Freelance / Self-Employed, Jammu &amp; Kashmir.</li>
+    <li><em>2025.01 - 2025.06</em>: Data Science Intern, iNeuron.ai, Bengaluru.</li>
+    <li><em>2023.02 - 2023.12</em>: Data Scientist, NIELIT, Jammu &amp; Kashmir.</li>
+  </ul>
 
-    <div class="output-item">
-      <div class="output-meta">2025 · Open-Source · GitHub</div>
-      <div class="output-title">Reinforcement Learning: Zero to Hero</div>
-      <div class="output-desc">A maintained RL repository — MDPs through PPO and DDPG — with clean implementations and math annotations. Written for practitioners building the intuition needed for modern post-training research.</div>
-      <div class="output-links">
-        <a href="https://github.com/shaheennabi/Reinforcement-Learning-Zero-to-Hero" target="_blank">GitHub ↗</a>
-      </div>
-    </div>
+  <h2 class="section" id="projects"><span class="emoji">🛠️</span>Selected Projects</h2>
+  <ul class="plain">
+    <li>
+      <span class="entry-title">Open Post-Training</span>
+      <span class="entry-meta">Python · PyTorch · Transformers · TRL · vLLM · SGLang · 2026</span>
+      <span class="entry-desc">A single reusable system that takes a base model through the full post-training recipe, stage by stage, rather than one-off scripts per experiment: evaluation, preference tuning, reasoning distillation, and RLVR training all share the same components. I use it as a research testbed — running hypotheses through the pipeline and producing demos/proof-of-output for specific ideas. One such run: a GRPO ablation on a base model (64.0% MATH-500) dropped to 48.0% at a 5-step checkpoint before recovering to 60.0% at 50 steps, with response length shrinking from 303 → ~220 tokens — evidence that sparse binary-correctness reward is a weak signal without more steps and better reward shaping.</span>
+      <div class="links-row"><a href="https://github.com/shaheennabi/open-posttraining-system">GitHub ↗</a></div>
+    </li>
+    <li>
+      <span class="entry-title">Olmo-3 From Scratch</span>
+      <span class="entry-meta">Python · PyTorch · Hugging Face · 2026</span>
+      <span class="entry-desc">From-scratch implementation of AllenAI's Olmo-3 (7B/32B) — GQA, YaRN-scaled RoPE (8K→65K), sliding-window attention with periodic global refresh, SwiGLU, RMSNorm — plus a custom KV-cache module with unrotated key/value storage for RoPE compatibility, reducing cache memory via GQA while supporting bfloat16 inference.</span>
+      <div class="links-row"><a href="https://github.com/shaheennabi/Olmo3-from-scratch">GitHub ↗</a></div>
+    </li>
+    <li>
+      <span class="entry-title">Reinforcement Learning: Zero to Hero</span>
+      <span class="entry-meta">2025</span>
+      <span class="entry-desc">A maintained RL repository spanning MDPs through PPO and DDPG, with clean implementations and math annotations for practitioners moving into post-training research.</span>
+      <div class="links-row"><a href="https://github.com/shaheennabi/Reinforcement-Learning-Zero-to-Hero">GitHub ↗</a></div>
+    </li>
+    <li>
+      <span class="entry-title">LeafLogic Dataset</span>
+      <span class="entry-meta">2025</span>
+      <span class="entry-desc">25K annotated crop/plant images, open-sourced on Hugging Face — downloaded by thousands of developers around the world.</span>
+      <div class="links-row"><a href="https://huggingface.co/devshaheen">Dataset ↗</a></div>
+    </li>
+  </ul>
 
-    <div class="output-item">
-      <div class="output-meta">2025 · Implementation · Architecture</div>
-      <div class="output-title">Attention Variants from Scratch — GQA &amp; MLA</div>
-      <div class="output-desc">PyTorch implementations of Grouped-Query Attention and Multi-Head Latent Attention. GQA shares KV heads across query groups to reduce cache memory. MLA (as in DeepSeek) compresses KV into a low-rank latent space and up-projects at inference, decoupling cache footprint from model width.</div>
-      <div class="output-links">
-        <a href="https://github.com/shaheennabi" target="_blank">GitHub ↗</a>
-      </div>
-    </div>
+  <h2 class="section" id="education"><span class="emoji">📖</span>Education</h2>
+  <ul class="plain">
+    <li>
+      <span class="entry-title">Bachelor of Computer Applications</span> — Information Technology, Machine Learning, Deep Learning &amp; AI Systems
+      <span class="entry-meta">Indira Gandhi National Open University</span>
+    </li>
+  </ul>
 
-    <div class="output-item">
-      <div class="output-meta">2024 · Fine-Tuning · Open Source</div>
-      <div class="output-title">Instruction Fine-Tuning of LLaMA 3.2 3B — Kannada</div>
-      <div class="output-desc">LoRA + 4-bit QLoRA fine-tune of Meta LLaMA 3.2-3B Instruct on 390K Kannada instruction pairs. Merged to FP16 for deployment. Released on Hugging Face Hub; used by hundreds of developers monthly for regional NLP applications.</div>
-      <div class="output-links">
-        <a href="https://github.com/shaheennabi/Production-Ready-Instruction-Finetuning-of-Meta-Llama-3.2-3B-Instruct-Project" target="_blank">GitHub ↗</a>
-        <a href="https://huggingface.co/devshaheen" target="_blank">Model ↗</a>
-      </div>
-    </div>
-
-    <div class="output-item">
-      <div class="output-meta">2025 · Applied ML · Dataset</div>
-      <div class="output-title">LeafLogic — Agricultural Object Detection &amp; Multi-Agent Pipeline</div>
-      <div class="output-desc">YOLOv5 detection pipeline (NVIDIA A100) for 100+ crop species. Multi-agent framework for autonomous post-detection research and reporting. Deployed on AWS ECR/EC2. Open-sourced a 25K annotated image dataset on Hugging Face, used by researchers globally.</div>
-      <div class="output-links">
-        <a href="https://github.com/shaheennabi/Production-Ready-LeafLogic-Multi-AI-Agents-Project" target="_blank">GitHub ↗</a>
-        <a href="https://huggingface.co/devshaheen" target="_blank">Dataset ↗</a>
-      </div>
-    </div>
-
-    <div class="oss-note">
-      <strong>Open source.</strong> I contribute through code and writing, and am actively working toward pushing contributions into large LLM infrastructure frameworks and post-training pipelines at scale — and actively document my journey so it can help others along the way.
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="section" id="experience">
-    <h2>Experience</h2>
-
-    <div class="exp-item">
-      <div class="exp-date">2025 — Present</div>
-      <div>
-        <div class="exp-role">Research Engineer, Independent</div>
-        <div class="exp-org">India</div>
-        <div class="exp-desc">Post-training pipelines, reinforcement learning for LLMs, reasoning model research, and inference-time compute. Implementing training objectives and architectures from frontier research. Building toward contributions to large-scale LLM infrastructure.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-date">Jan – Mar 2025</div>
-      <div>
-        <div class="exp-role">Data Science Intern</div>
-        <div class="exp-org">iNeuron.ai · Bengaluru, India</div>
-        <div class="exp-desc">Object detection pipelines on NVIDIA A100. Open-sourced a 25K annotated image dataset. Designed cloud inference infrastructure on AWS ECR, EC2, and Jenkins.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-date">2022</div>
-      <div>
-        <div class="exp-role">Founder</div>
-        <div class="exp-org">Lasso Pacific Pvt Ltd · Anantnag, J&amp;K, India</div>
-        <div class="exp-desc">AI and robotics edtech platform for rural learners. Reached 2M+ annual visitors organically. Closed after one year; proceeds reinvested into free tech literacy programs.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div class="section" id="education">
-    <h2>Education</h2>
-
-    <div class="edu-item">
-      <div class="edu-date">2025 – 2028</div>
-      <div>
-        <div class="edu-deg">Bachelor of Arts</div>
-        <div class="edu-inst">Indira Gandhi National Open University</div>
-      </div>
-    </div>
-
-    <div class="edu-item">
-      <div class="edu-date">2021 – 2022</div>
-      <div>
-        <div class="edu-deg">Full Stack Data Science</div>
-        <div class="edu-inst">iNeuron Intelligence</div>
-      </div>
-    </div>
-
-    <div class="edu-item">
-      <div class="edu-date">2021 – 2023</div>
-      <div>
-        <div class="edu-deg">High School Diploma — Mathematics &amp; Computer Science</div>
-        <div class="edu-inst">J&amp;K Board of School Education</div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <span>Shaheen Nabi · Research Engineer</span>
-    <span>Last updated: March 2026</span>
-  </footer>
+  <footer>Research @ Indian Institute of Science · Bengaluru, India · Last updated: July 2026</footer>
 
 </div>
 </body>

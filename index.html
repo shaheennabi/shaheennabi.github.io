@@ -1,541 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shaheen Nabi — Researcher and Research Engineer working on long-horizon agents, distributed reinforcement learning, open post-training systems, and accelerator performance engineering.">
-  <meta name="theme-color" content="#080b14">
-  <title>Shaheen Nabi | Research Engineer</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #080b14;
-      --surface: rgba(17, 23, 39, .82);
-      --surface-strong: #111827;
-      --text: #edf2ff;
-      --muted: #a2adc2;
-      --muted-2: #77849b;
-      --line: rgba(166, 184, 222, .15);
-      --line-strong: rgba(166, 184, 222, .25);
-      --blue: #8ab4ff;
-      --violet: #b7a0ff;
-      --cyan: #75e1dc;
-      --maxw: 1010px;
-      --shadow: 0 22px 70px rgba(0, 0, 0, .28);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(ellipse at 12% 2%, rgba(68, 90, 185, .20), transparent 34rem),
-        radial-gradient(ellipse at 88% 15%, rgba(124, 72, 180, .17), transparent 33rem),
-        radial-gradient(ellipse at 52% 72%, rgba(31, 116, 132, .09), transparent 34rem),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 15.5px;
-      line-height: 1.72;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      opacity: .17;
-      background-image:
-        linear-gradient(rgba(170, 190, 230, .055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(170, 190, 230, .055) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
-    }
-    a { color: var(--blue); text-decoration: none; transition: color .18s ease, opacity .18s ease, transform .18s ease; }
-    a:hover { color: #c9dcff; text-decoration: none; }
-    .wrap { width: min(var(--maxw), calc(100% - 40px)); margin: 34px auto 70px; }
-
-    nav.top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 5px;
-      width: fit-content;
-      max-width: 100%;
-      margin: 0 auto 25px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(11, 16, 29, .76);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, .18);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 12px;
-      z-index: 20;
-    }
-    nav.top a {
-      padding: 7px 13px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .085em;
-      text-transform: uppercase;
-    }
-    nav.top a:hover { color: var(--text); background: rgba(139, 174, 255, .12); }
-
-    header.profile {
-      position: relative;
-      isolation: isolate;
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      padding: 36px;
-      margin-bottom: 35px;
-      overflow: hidden;
-      border: 1px solid var(--line-strong);
-      border-radius: 25px;
-      background:
-        radial-gradient(ellipse at 85% 8%, rgba(144, 105, 255, .22), transparent 22rem),
-        radial-gradient(ellipse at 18% 100%, rgba(73, 172, 205, .13), transparent 25rem),
-        linear-gradient(135deg, rgba(24, 34, 58, .96), rgba(12, 18, 32, .96) 65%);
-      box-shadow: var(--shadow);
-    }
-    header.profile::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 250px;
-      height: 250px;
-      right: -100px;
-      bottom: -160px;
-      border: 1px solid rgba(170, 190, 255, .22);
-      border-radius: 50%;
-      box-shadow: 0 0 0 25px rgba(170, 190, 255, .025), 0 0 0 55px rgba(170, 190, 255, .02);
-    }
-    header.profile img {
-      width: 124px;
-      height: 124px;
-      flex-shrink: 0;
-      padding: 3px;
-      border-radius: 22px;
-      object-fit: cover;
-      background: linear-gradient(145deg, var(--cyan), var(--blue), var(--violet));
-      box-shadow: 0 10px 35px rgba(89, 141, 255, .24);
-    }
-    .id h1 {
-      margin: 0 0 8px;
-      color: #fff;
-      font-size: clamp(30px, 4.2vw, 41px);
-      line-height: 1.12;
-      font-weight: 790;
-      letter-spacing: -.045em;
-    }
-    .id .role { margin-bottom: 5px; color: #dce7ff; font-size: 15px; font-weight: 620; }
-    .id .loc { margin-bottom: 16px; color: var(--muted); font-size: 13px; }
-    .contacts { display: flex; flex-wrap: wrap; gap: 8px; }
-    .contacts a {
-      padding: 6px 11px;
-      border: 1px solid rgba(175, 195, 235, .19);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .045);
-      color: #d5e2ff;
-      font-size: 12px;
-      font-weight: 620;
-    }
-    .contacts a:hover { border-color: rgba(138, 180, 255, .55); background: rgba(138, 180, 255, .12); }
-
-    h2.section {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      margin: 43px 0 15px;
-      color: #f1f5ff;
-      font-size: 13px;
-      font-weight: 780;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    h2.section::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      margin-left: 7px;
-      background: linear-gradient(90deg, rgba(146, 169, 219, .28), transparent);
-    }
-    h2.section .emoji {
-      display: grid;
-      place-items: center;
-      width: 30px;
-      height: 30px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: rgba(138, 180, 255, .08);
-      font-size: 14px;
-    }
-
-    ul.plain, .about-card {
-      list-style: none;
-      margin: 0;
-      padding: 24px 27px;
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      background: linear-gradient(145deg, rgba(20, 28, 46, .88), rgba(13, 19, 32, .88));
-      box-shadow: 0 12px 38px rgba(0, 0, 0, .16);
-      backdrop-filter: blur(12px);
-    }
-    ul.plain li { margin: 0 0 19px; padding: 0; }
-    ul.plain li:last-child { margin-bottom: 0; }
-    ul.plain li::before { content: none; }
-
-    .about-card p { margin: 0 0 14px; color: #c4cee0; font-size: 14.5px; line-height: 1.82; }
-    .about-card p:last-of-type { margin-bottom: 0; }
-    .about-card strong { color: #f5f7ff; font-weight: 700; }
-    .about-card a { color: #a8c7ff; }
-
-    .entry-title { display: block; color: #f2f5ff; font-size: 16px; font-weight: 740; }
-    .entry-meta {
-      display: block;
-      margin: 4px 0 7px;
-      color: var(--muted-2);
-      font-size: 12px;
-      font-weight: 650;
-      letter-spacing: .015em;
-    }
-    .entry-desc { display: block; color: #b8c3d7; font-size: 14px; line-height: 1.75; }
-    .links-row { margin-top: 10px; font-size: 12.5px; font-weight: 720; }
-    .links-row a { margin-right: 17px; }
-    .links-row a::after { content: " ↗"; opacity: .8; }
-
-    #experience-list { position: relative; padding-left: 30px; }
-    #experience-list::before {
-      content: "";
-      position: absolute;
-      top: 26px;
-      bottom: 26px;
-      left: 15px;
-      width: 1px;
-      background: linear-gradient(var(--blue), rgba(183, 160, 255, .2), transparent);
-    }
-    #experience-list li { position: relative; padding: 1px 0 2px; }
-    #experience-list li::after {
-      content: "";
-      position: absolute;
-      left: -20px;
-      top: 8px;
-      width: 8px;
-      height: 8px;
-      border: 2px solid #9abaff;
-      border-radius: 50%;
-      background: #111a2c;
-      box-shadow: 0 0 13px rgba(138, 180, 255, .45);
-    }
-    #experience-list li:not(:first-child) { color: #c0cadc; font-size: 14px; }
-    #experience-list li:first-child { padding-bottom: 6px; }
-
-    #projects-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-      backdrop-filter: none;
-    }
-    #projects-list li {
-      position: relative;
-      min-width: 0;
-      margin: 0;
-      padding: 23px 23px 21px;
-      overflow: hidden;
-      border: 1px solid var(--line-strong);
-      border-radius: 18px;
-      background:
-        radial-gradient(ellipse at 100% 0%, rgba(115, 152, 255, .13), transparent 18rem),
-        linear-gradient(145deg, rgba(22, 31, 51, .96), rgba(13, 19, 32, .96));
-      box-shadow: 0 15px 35px rgba(0, 0, 0, .18);
-      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-    }
-    #projects-list li:hover {
-      transform: translateY(-4px);
-      border-color: rgba(138, 180, 255, .43);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, .25), 0 0 30px rgba(102, 140, 255, .07);
-    }
-    #projects-list li::before {
-      content: "";
-      display: block;
-      width: 36px;
-      height: 3px;
-      margin-bottom: 17px;
-      border-radius: 9px;
-      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet));
-    }
-    #projects-list .entry-title { font-size: 17px; }
-    #projects-list .entry-desc { min-height: 132px; }
-
-    #writing-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 13px;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-      backdrop-filter: none;
-    }
-    .article-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 190px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: linear-gradient(145deg, rgba(21, 29, 48, .92), rgba(12, 18, 31, .94));
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-    .article-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(183, 160, 255, .48);
-      background: linear-gradient(145deg, rgba(30, 37, 62, .98), rgba(14, 20, 35, .98));
-    }
-    .article-kicker {
-      display: inline-block;
-      width: fit-content;
-      margin-bottom: 15px;
-      padding: 4px 8px;
-      border: 1px solid rgba(183, 160, 255, .2);
-      border-radius: 999px;
-      color: #c6b8ff;
-      background: rgba(183, 160, 255, .075);
-      font-size: 9.5px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .article-title { margin: 0 0 9px; color: #eef2ff; font-size: 15px; line-height: 1.4; font-weight: 740; }
-    .article-summary { margin: 0; color: #aebbd1; font-size: 12.5px; line-height: 1.65; }
-    .article-read { margin-top: auto; padding-top: 17px; color: #a8c7ff; font-size: 11.5px; font-weight: 740; }
-
-    .video-block {
-      margin-top: 24px;
-      padding: 21px;
-      border: 1px solid rgba(138, 180, 255, .23);
-      border-radius: 17px;
-      background:
-        radial-gradient(ellipse at 92% 0%, rgba(113, 92, 207, .14), transparent 17rem),
-        rgba(8, 13, 24, .62);
-    }
-    .video-topline { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 13px; }
-    .video-heading { margin: 0; color: #f0f4ff; font-size: 15px; font-weight: 750; }
-    .video-subtitle { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border: 1px solid rgba(175, 195, 235, .18);
-      border-radius: 12px;
-      background: #05070c;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, .3);
-    }
-    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .video-fallback {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .video-fallback a {
-      flex-shrink: 0;
-      padding: 7px 12px;
-      border: 1px solid rgba(138, 180, 255, .28);
-      border-radius: 999px;
-      background: rgba(138, 180, 255, .09);
-      color: #c8dcff;
-      font-weight: 720;
-    }
-    #education-list li { color: #c6d0e1; }
-    footer {
-      margin-top: 44px;
-      padding: 19px 8px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted-2);
-      font-size: 11px;
-      letter-spacing: .035em;
-      text-align: center;
-    }
-
-    @media (max-width: 800px) {
-      #writing-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 650px) {
-      .wrap { width: min(100% - 26px, var(--maxw)); margin-top: 15px; }
-      nav.top { position: static; width: 100%; border-radius: 15px; gap: 3px; }
-      nav.top a { padding: 7px 9px; font-size: 10px; }
-      header.profile { align-items: flex-start; gap: 17px; padding: 22px; border-radius: 20px; }
-      header.profile img { width: 88px; height: 88px; border-radius: 17px; }
-      .id h1 { font-size: 28px; }
-      .id .role { font-size: 13px; line-height: 1.55; }
-      .id .loc { font-size: 11.5px; }
-      .contacts { gap: 6px; }
-      .contacts a { padding: 5px 8px; font-size: 11px; }
-      h2.section { margin-top: 33px; }
-      ul.plain, .about-card { padding: 19px; }
-      #projects-list { grid-template-columns: 1fr; }
-      #projects-list .entry-desc { min-height: 0; }
-      #writing-list { grid-template-columns: 1fr; }
-      .article-card { min-height: 0; }
-      .video-block { padding: 15px; }
-      .video-fallback { align-items: flex-start; flex-direction: column; }
-    }
-    @media (max-width: 390px) {
-      header.profile { flex-direction: column; }
-      header.profile img { width: 96px; height: 96px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Shaheen Nabi — Researcher and Research Engineer working on long-horizon agents, distributed reinforcement learning, open post-training systems, and accelerator performance engineering.">
+<meta name="theme-color" content="#f3f6fd">
+<title>Shaheen Nabi | Research Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <div class="wrap">
-    <nav class="top" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
-      <a href="#education">Education</a>
-    </nav>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+<nav class="top" aria-label="Main navigation"><a href="#about">About</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#education">Education</a></nav>
 
-    <header class="profile">
-      <img src="https://shaheennabi.github.io/Shaheen-Nabi.jpg" alt="Shaheen Nabi">
-      <div class="id">
-        <h1>Shaheen Nabi</h1>
-        <div class="role">Researcher @ Carnegie Mellon University | Long-Horizon Agents, Post-Training &amp; Distributed Systems</div>
-        <div class="loc">Pittsburgh, Pennsylvania, United States · Remote</div>
-        <div class="contacts">
-          <a href="mailto:devshaheen0@gmail.com">Email</a>
-          <a href="https://github.com/shaheennabi">GitHub</a>
-          <a href="https://www.linkedin.com/in/shaheennabi/">LinkedIn</a>
-          <a href="https://x.com/DevShaheen1">X / Twitter</a>
-          <a href="https://huggingface.co/devshaheen">Hugging Face</a>
-          <a href="https://substack.com/@shaheennabi">Substack</a>
-        </div>
-      </div>
-    </header>
-
-    <h2 class="section" id="about"><span class="emoji">💬</span>About Me</h2>
-    <section class="about-card" id="about-list">
-      <p>I am currently building two open-source systems: an <strong>Open Post-Training System</strong> for advancing open-weight models through reinforcement learning on long-horizon coding and agentic tasks, and an <strong>Open Distributed Training System</strong> focused on multi-device training, JAX sharding, collective communication, and GPU/TPU performance engineering.</p>
-      <p>Previously, I worked as a researcher at <strong>Carnegie Mellon University</strong> on long-horizon agentic systems, studying where models fail across extended coding and agentic tasks and developing evaluation environments and verifiers to identify failures in context retention, state tracking, planning, and execution. Before that, at the <strong>Indian Institute of Science (IISc)</strong>, I studied the internal representations associated with reasoning and memorization in language models.</p>
-      <p>My work brings together reinforcement learning, agent environments and evaluation, distributed systems, and accelerator performance. I share research code, experiments, and technical explanations through <a href="https://github.com/shaheennabi">GitHub</a> and <a href="https://substack.com/@shaheennabi/posts">Substack</a>.</p>
-
-      <div class="video-block">
-        <div class="video-topline">
-          <div>
-            <p class="video-heading">From the YouTube channel</p>
-            <p class="video-subtitle">Watch the selected talk from 2:46:36.</p>
-          </div>
-        </div>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/OqHqZq-km5I?start=9996&amp;rel=0&amp;playsinline=1"
-            title="Shaheen Nabi — selected YouTube video"
-            loading="eager"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-fallback">
-          <span>If playback is blocked by YouTube's video settings, open the video directly.</span>
-          <a href="https://www.youtube.com/watch?v=OqHqZq-km5I&amp;t=9996s" target="_blank" rel="noopener noreferrer">Play on YouTube</a>
-        </div>
-      </div>
-    </section>
-
-    <h2 class="section" id="publications"><span class="emoji">📝</span>Publications</h2>
-    <ul class="plain">
-      <li>
-        <span class="entry-title">Beyond Fixed Directions: Adaptive Representation Analysis of Reasoning and Memorization in LLMs</span>
-        <span class="entry-meta">Preprint · 2026</span>
-        <span class="entry-desc">An empirical study of whether reasoning and memorization can be characterized by a single representation direction, and whether that geometry remains stable after GRPO.</span>
-        <div class="links-row"><a href="https://zenodo.org/records/22043107">Preprint ↗</a></div>
-      </li>
-    </ul>
-
-    <h2 class="section" id="experience"><span class="emoji">💻</span>Experience</h2>
-    <ul class="plain" id="experience-list">
-      <li>
-        <span class="entry-title">Researcher, Long-Horizon Agentic Systems &amp; Evaluation</span>
-        <span class="entry-meta">August 2026 – November 2026 · <a href="https://www.cmu.edu/">Carnegie Mellon University</a> · Pittsburgh, PA (Remote)</span>
-        <span class="entry-desc">Studied failure modes in long-horizon coding and agentic tasks, and developed evaluation environments and verifiers to assess context retention, state tracking, planning, and execution.</span>
-      </li>
-      <li><em>June 2026 – August 2026</em>: Researcher, Mechanistic Interpretability &amp; Reasoning, <a href="https://iisc.ac.in/">Indian Institute of Science (IISc)</a>, Bengaluru.</li>
-      <li><em>December 2025 – May 2026</em>: Member of Technical Staff, RL Environments &amp; Post-Training for Coding Agents, Stealth AI Startup, Singapore (Remote).</li>
-      <li><em>November 2024 – April 2025</em>: Machine Learning Engineer, Agentic Systems, Stealth AI Startup (Travel-Tech), Ontario, Canada (Remote).</li>
-      <li><em>May 2024 – October 2024</em>: Machine Learning Intern, Computer Vision, iNeuron.ai, Bengaluru.</li>
-      <li><em>January 2023 – December 2023</em>: Machine Learning Engineer, NIELIT, Jammu &amp; Kashmir (Hybrid).</li>
-      <li><em>January 2021 – December 2022</em>: Software Engineer, Lasso Pacific.</li>
-      <li><em>July 2019 – December 2020</em>: Software Engineer (Intern → Full-time), Shexion, Jammu &amp; Kashmir.</li>
-    </ul>
-
-    <h2 class="section" id="projects"><span class="emoji">🛠️</span>Selected Projects</h2>
-    <ul class="plain" id="projects-list">
-      <li>
-        <span class="entry-title">Open Post-Training System</span>
-        <span class="entry-meta">Python · PyTorch · Transformers · TRL · vLLM · SGLang · Distributed RL · 2026</span>
-        <span class="entry-desc">An open research system for advancing open-weight language models through reinforcement learning on long-horizon coding and agentic tasks. It brings together rollout generation, agent environments, sandboxed execution, verifiers, training pipelines, inference, and evaluation. Current experiments include Qwen3-0.6B, GRPO training, and MATH-500 evaluation.</span>
-        <div class="links-row"><a href="/open-posttraining/">Project page</a><a href="https://github.com/shaheennabi/open-posttraining-system">GitHub</a></div>
-      </li>
-      <li>
-        <span class="entry-title">Open Distributed Training System</span>
-        <span class="entry-meta">JAX · Distributed Training · Sharding · Collectives · GPU/TPU Kernels · 2026</span>
-        <span class="entry-desc">An open engineering project focused on scalable LLM training across multiple accelerators. Work includes JAX device meshes and sharding, collective communication, memory and compute trade-offs, roofline and performance modeling, and low-level GPU/TPU kernel development. The longer-term goal is a research-grade distributed transformer training stack supported by profiling, benchmarks, and systematic performance analysis.</span>
-        <div class="links-row"><a href="/open-distributed-system/">Project page</a><a href="https://github.com/shaheennabi/open-distributed-training-framework">GitHub</a></div>
-      </li>
-    </ul>
-
-    <h2 class="section" id="writing"><span class="emoji">✍️</span>Selected Writing</h2>
-    <div id="writing-list" aria-label="Selected Substack articles">
-      <a class="article-card" href="https://shaheennabi.substack.com/p/intro-to-reinforcement-learning-env" target="_blank" rel="noopener noreferrer">
-        <span class="article-kicker">Reinforcement Learning</span>
-        <h3 class="article-title">Introduction to Reinforcement Learning Environments</h3>
-        <p class="article-summary">An introduction to the environments in which agents interact, take actions, receive feedback, and learn from experience.</p>
-        <span class="article-read">Read article ↗</span>
-      </a>
-      <a class="article-card" href="https://shaheennabi.substack.com/p/superposition-and-sparse-autoencoders" target="_blank" rel="noopener noreferrer">
-        <span class="article-kicker">Mechanistic Interpretability</span>
-        <h3 class="article-title">Superposition and Sparse Autoencoders</h3>
-        <p class="article-summary">How neural networks represent more features than dimensions, and how sparse autoencoders can help study those representations.</p>
-        <span class="article-read">Read article ↗</span>
-      </a>
-      <a class="article-card" href="https://shaheennabi.substack.com/p/introduction-to-mechanistic-interpretability" target="_blank" rel="noopener noreferrer">
-        <span class="article-kicker">Mechanistic Interpretability</span>
-        <h3 class="article-title">Introduction to Mechanistic Interpretability</h3>
-        <p class="article-summary">A practical introduction to circuits, superposition, activation patching, and sparse autoencoders for understanding model computation.</p>
-        <span class="article-read">Read article ↗</span>
-      </a>
+<header class="stage">
+  <div class="txt">
+    <div class="me"><img src="Shaheen-Nabi.jpg" alt="Shaheen Nabi"><span>Researcher @ Carnegie Mellon University<br>Pittsburgh, Pennsylvania · Remote</span></div>
+    <h1>Shaheen Nabi</h1>
+    <p class="lede">I am building the open RL stack for long-horizon coding agents, down to the kernel.</p>
+    <div class="chips">
+      <a href="mailto:devshaheen0@gmail.com">Email</a><a href="https://github.com/shaheennabi">GitHub</a><a href="https://www.linkedin.com/in/shaheennabi/">LinkedIn</a><a href="https://x.com/DevShaheen1">X / Twitter</a><a href="https://huggingface.co/devshaheen">Hugging Face</a><a href="https://substack.com/@shaheennabi">Substack</a>
     </div>
-
-    <h2 class="section" id="education"><span class="emoji">📖</span>Education</h2>
-    <ul class="plain" id="education-list">
-      <li>
-        <span class="entry-title">Bachelor of Computer Applications</span> — Information Technology
-        <span class="entry-meta">Indira Gandhi National Open University</span>
-      </li>
-    </ul>
-
-    <footer>Research &amp; Engineering · Long-Horizon Agents · Open Post-Training · Distributed Training Systems · Last updated: November 2026</footer>
   </div>
-</body>
-</html>
+  <div class="cv"><canvas id="mesh" role="img" aria-label="Animated device mesh with packets travelling around a ring"></canvas></div>
+  <span class="cap">Illustrative: ring all-reduce across a 4×3 device mesh</span>
+</header>
+
+<h2 id="about">About</h2>
+<div class="sheet"><div class="prose">
+  <p class="big">Currently building an “open post-training system” and an “open distributed training system” to train and advance open-weight models through reinforcement learning on long-horizon coding and agentic tasks.</p>
+  <p>Focused on building the complete RL stack: distributed orchestration, rollout generation, sandboxed environments, verifiers, training, inference, and evaluation. Building reliable, scalable infrastructure with robust APIs, automated testing, and observability, while studying training dynamics, debugging failures, and running controlled experiments to improve model capabilities over increasingly long horizons.</p>
+  <p>Optimizing end-to-end training and inference performance through distributed systems engineering, GPU and TPU kernel development, memory and communication optimization, profiling, and benchmarking. Focused on eliminating bottlenecks, maximizing hardware utilization, and improving throughput and efficiency across accelerator architectures.</p>
+  <p>Previously, I worked as a researcher at <strong>Carnegie Mellon University</strong> on long-horizon agentic systems, studying where models fail across extended coding and agentic tasks and developing evaluation environments and verifiers to identify failures in context retention, state tracking, planning, and execution. Before that, at the <strong>Indian Institute of Science (IISc)</strong>, I studied the internal representations associated with reasoning and memorization in language models.</p>
+  <p>My research spans the full stack around reasoning models — post-training methods that build reasoning (RLVR, preference optimization, reasoning distillation), the test-time strategies that make it efficient (compute allocation, deciding when to stop deliberating), and the empirical and evaluation work needed to trust any of it. I have been going deeper into mechanistic interpretability — studying the internal circuits and representations behind multi-step reasoning in large language models, to understand failure modes like reward hacking and unfaithful chain-of-thought well enough to actually fix them, not just detect them. A specific thread: disentangling memorization from genuine reasoning mechanistically — which circuits are doing lookup versus computation — and using that understanding to work toward guiding reasoning safely, so models can be steered away from unfaithful or unsafe reasoning traces rather than just penalized after the fact.</p>
+  <p>My work brings together reinforcement learning, agent environments and evaluation, distributed systems, and accelerator performance. I share research code, experiments, and technical explanations through <a href="https://github.com/shaheennabi">GitHub</a> and <a href="https://substack.com/@shaheennabi/posts">Substack</a>.</p>
+</div>
+  <div class="vid">
+    <div>
+      <h3>Making videos on real engineering bottlenecks: kernels, memory, collectives</h3>
+      <p>Long-form walkthroughs from the YouTube channel. This one starts at 2:46:36.</p>
+      <a class="btn pri" href="https://www.youtube.com/watch?v=OqHqZq-km5I&amp;t=9996s" target="_blank" rel="noopener noreferrer">Play on YouTube</a>
+    </div>
+    <div class="frame"><iframe src="https://www.youtube.com/embed/OqHqZq-km5I?start=9996&amp;rel=0&amp;playsinline=1" title="Shaheen Nabi — selected YouTube video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<h2 id="publications">Publications</h2>
+<div class="sheet">
+  <h3>Beyond Fixed Directions: Adaptive Representation Analysis of Reasoning and Memorization in LLMs</h3>
+  <span class="sub">Preprint · 2026</span>
+  <p style="margin:0 0 12px">An empirical study of whether reasoning and memorization can be characterized by a single representation direction, and whether that geometry remains stable after GRPO.</p>
+  <a class="btn" href="https://arxiv.org/html/2608.21919">Read the preprint</a>
+</div>
+
+<h2 id="experience">Experience</h2>
+<dl class="tl">
+  <dt>Aug – Nov 2026</dt><dd class="now"><b>Researcher, Long-Horizon Agentic Systems &amp; Evaluation</b><span class="sub"><a href="https://www.cmu.edu/">Carnegie Mellon University</a> · Pittsburgh, PA (Remote)</span>Studied failure modes in long-horizon coding and agentic tasks, and developed evaluation environments and verifiers to assess context retention, state tracking, planning, and execution.</dd>
+  <dt>Jun – Aug 2026</dt><dd>Researcher, Mechanistic Interpretability &amp; Reasoning, <a href="https://iisc.ac.in/">Indian Institute of Science (IISc)</a>, Bengaluru</dd>
+  <dt>Dec 2025 – May 2026</dt><dd>Member of Technical Staff, RL Environments &amp; Post-Training for Coding Agents, Stealth AI Startup, Singapore (Remote)</dd>
+  <dt>May – Nov 2025</dt><dd>Machine Learning Engineer, Agentic Systems, Stealth AI Startup (Travel-Tech), Virginia, USA (Remote)</dd>
+  <dt>Nov 2024 – Apr 2025</dt><dd>Machine Learning Engineer, Agentic Systems, Stealth AI Startup (Travel-Tech), Ontario, Canada (Remote)</dd>
+  <dt>May – Oct 2024</dt><dd>Machine Learning Intern, Computer Vision, iNeuron.ai, Bengaluru</dd>
+  <dt>Jan – Dec 2023</dt><dd>Machine Learning Engineer, NIELIT, Jammu &amp; Kashmir (Hybrid)</dd>
+  <dt>Jan 2021 – Dec 2022</dt><dd>Software Engineer, Lasso Pacific</dd>
+  <dt>Jul 2019 – Dec 2020</dt><dd>Software Engineer (Intern → Full-time), Shexion, Jammu &amp; Kashmir</dd>
+</dl>
+
+<h2 id="projects">Selected projects</h2>
+<div class="proj">
+  <article class="card a">
+    <h3>Open Post-Training System</h3>
+    <div class="tags"><span>Python</span><span>PyTorch</span><span>TRL</span><span>vLLM</span><span>SGLang</span><span>Distributed RL</span></div>
+    <p>An open research system for advancing open-weight language models through reinforcement learning on long-horizon coding and agentic tasks. It brings together rollout generation, agent environments, sandboxed execution, verifiers, training pipelines, inference, and evaluation. Current experiments include Qwen3-0.6B, GRPO training, and MATH-500 evaluation.</p>
+    <div class="btns"><a class="btn pri" href="open-posttraining/index.html">Project page</a><a class="btn" href="https://github.com/shaheennabi/open-posttraining-system">GitHub</a></div>
+  </article>
+  <article class="card b">
+    <h3>Open Distributed Training System</h3>
+    <div class="tags"><span>JAX</span><span>Sharding</span><span>Collectives</span><span>GPU/TPU kernels</span></div>
+    <p>An open engineering project focused on scalable LLM training across multiple accelerators: JAX device meshes and sharding, collective communication, memory and compute trade-offs, roofline and performance modeling, and low-level GPU/TPU kernel development. The longer-term goal is a research-grade distributed transformer training stack supported by profiling, benchmarks, and systematic performance analysis.</p>
+    <div class="btns"><a class="btn pri" href="open-distributed-system/index.html">Project page</a><a class="btn" href="https://github.com/shaheennabi/open-distributed-training-framework">GitHub</a></div>
+  </article>
+</div>
+<h3 style="margin:34px 0 0;font-size:24px">More projects</h3>
+<div class="arts p">
+  <a href="https://github.com/shaheennabi/Olmo3-from-scratch" target="_blank" rel="noopener noreferrer"><b>Python · PyTorch · Hugging Face · 2026</b><div><h3>Olmo-3 From Scratch</h3><p>From-scratch implementation of AllenAI's Olmo-3 (7B/32B) — GQA, YaRN-scaled RoPE (8K→65K), sliding-window attention with periodic global refresh, SwiGLU, RMSNorm — plus a custom KV-cache module with unrotated key/value storage for RoPE compatibility, reducing cache memory via GQA while supporting bfloat16 inference.</p></div></a>
+  <a href="https://github.com/shaheennabi/Reinforcement-Learning-Zero-to-Hero" target="_blank" rel="noopener noreferrer"><b>2025</b><div><h3>Reinforcement Learning: Zero to Hero</h3><p>A maintained RL repository spanning MDPs through PPO and DDPG, with clean implementations and math annotations for practitioners moving into post-training research.</p></div></a>
+  <a href="https://huggingface.co/devshaheen" target="_blank" rel="noopener noreferrer"><b>2025</b><div><h3>LeafLogic Dataset</h3><p>25K annotated crop/plant images, open-sourced on Hugging Face — downloaded by thousands of developers around the world.</p></div></a>
+</div>
+
+<h2 id="writing">Selected writing</h2>
+<div class="arts">
+  <a href="https://shaheennabi.substack.com/p/intro-to-reinforcement-learning-env" target="_blank" rel="noopener noreferrer"><b>Reinforcement Learning</b><div><h3>Introduction to Reinforcement Learning Environments</h3><p>An introduction to the environments in which agents interact, take actions, receive feedback, and learn from experience.</p></div></a>
+  <a href="https://shaheennabi.substack.com/p/superposition-and-sparse-autoencoders" target="_blank" rel="noopener noreferrer"><b>Mechanistic Interpretability</b><div><h3>Superposition and Sparse Autoencoders</h3><p>How neural networks represent more features than dimensions, and how sparse autoencoders can help study those representations.</p></div></a>
+  <a href="https://shaheennabi.substack.com/p/introduction-to-mechanistic-interpretability" target="_blank" rel="noopener noreferrer"><b>Mechanistic Interpretability</b><div><h3>Introduction to Mechanistic Interpretability</h3><p>A practical introduction to circuits, superposition, activation patching, and sparse autoencoders for understanding model computation.</p></div></a>
+</div>
+
+<h2 id="education">Education</h2>
+<div class="sheet"><h3>Bachelor of Computer Applications</h3><span class="sub" style="margin:0">Information Technology · Indira Gandhi National Open University</span></div>
+
+<footer>Research &amp; Engineering · Long-Horizon Agents · Open Post-Training · Distributed Training Systems · Last updated: November 2026</footer>
+</div>
+<script src="assets/site.js"></script>
+</body></html>

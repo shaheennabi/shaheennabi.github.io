@@ -1,47 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Open Distributed Training System — distributed model training, accelerator kernels, and hardware-level performance engineering.">
-<title>Open Distributed Training System | Shaheen Nabi</title>
-<style>
-:root{color-scheme:light;--bg:#fbfbfa;--ink:#20242b;--muted:#626b78;--line:#e6e8ec;--accent:#167ca5;--soft:#e9f5fa;--max:820px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Georgia,"Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:42px 22px 72px}
-nav{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:64px;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}nav .links{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--muted)}
-.kicker{font:12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
-h1,h2,h3,.button,.tag,.flow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}h1{font-size:clamp(36px,7vw,58px);line-height:1.06;letter-spacing:-.045em;margin:14px 0 18px;max-width:700px}
-.lede{font-size:20px;line-height:1.55;color:#454d59;max-width:720px;margin:0 0 26px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
-.button{display:inline-block;padding:10px 15px;border:1px solid var(--line);border-radius:7px;font-size:13px;font-weight:650;color:var(--ink)}.button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.status{display:inline-flex;align-items:center;gap:8px;border:1px solid #cfe6f0;background:var(--soft);color:#176987;border-radius:99px;padding:6px 11px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.dot{width:7px;height:7px;border-radius:50%;background:#2698c5}
-.rule{height:1px;background:var(--line);margin:42px 0}h2{font-size:20px;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:15px;margin:0 0 6px}p{margin:0 0 14px}.muted{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.card{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff}.card p{font-size:15px;color:var(--muted);margin:0}
-.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}.step{padding:9px 11px;background:#fff;border:1px solid var(--line);border-radius:7px;font-size:12px;font-weight:600}.arrow{color:#9aa1aa;font-size:14px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tag{font-size:12px;color:#4f5662;background:#f1f2f4;border-radius:5px;padding:5px 8px}ul{padding-left:20px;margin:10px 0 0}li{padding:3px 0}
-footer{border-top:1px solid var(--line);margin-top:56px;padding-top:18px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}
-@media(max-width:600px){.wrap{padding-top:26px}nav{margin-bottom:46px;align-items:flex-start}.grid{grid-template-columns:1fr}.lede{font-size:18px}}
-</style></head>
-<body><main class="wrap">
-<nav><a href="/">← Shaheen Nabi</a><div class="links"><a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#work">Focus areas</a></div></nav>
-<header><div class="kicker">Open systems &amp; performance engineering</div><h1>Open Distributed Training System</h1>
-<p class="lede">Building the distributed compute and performance infrastructure required to train and serve increasingly capable open-weight models.</p>
-<span class="status"><span class="dot"></span> Ongoing development</span>
-<div class="actions"><a class="button primary" href="https://github.com/shaheennabi/open-distributed-training-framework">View source on GitHub ↗</a><a class="button" href="/">Back to portfolio</a></div></header>
-<div class="rule"></div>
-<section id="overview"><h2>Overview</h2>
-<p>An open-source effort to understand, implement, benchmark, and optimize the systems behind large-scale model training. The project connects distributed computing fundamentals with practical accelerator programming and end-to-end performance engineering.</p>
-<p class="muted">Current development focuses on JAX sharding, device meshes, collective communication, and performance modeling, with the longer-term goal of building a distributed transformer training stack.</p></section>
-<div class="rule"></div>
-<section id="architecture"><h2>System areas</h2>
-<div class="flow"><span class="step">Model workload</span><span class="arrow">→</span><span class="step">Sharding &amp; parallelism</span><span class="arrow">→</span><span class="step">Collectives</span><span class="arrow">→</span><span class="step">Accelerator kernels</span><span class="arrow">→</span><span class="step">Profiling</span></div>
-<div class="grid">
-<article class="card"><h3>Distributed execution</h3><p>Device meshes, sharding, data and tensor parallelism, and multi-device execution.</p></article>
-<article class="card"><h3>Communication</h3><p>Collective operations, communication patterns, synchronization, and data movement.</p></article>
-<article class="card"><h3>Accelerator kernels</h3><p>GPU and TPU programming, tiled computation, memory hierarchies, and kernel optimization.</p></article>
-<article class="card"><h3>Performance engineering</h3><p>Roofline analysis, profiling, benchmarking, bottleneck analysis, and throughput optimization.</p></article></div></section>
-<div class="rule"></div>
-<section id="work"><h2>Long-term direction</h2><ul>
-<li>Build a distributed transformer training implementation from first principles.</li><li>Optimize compute, memory movement, and collective communication across accelerators.</li><li>Develop reusable performance benchmarks and profiling workflows.</li><li>Connect distributed training infrastructure with the open post-training and RL stack.</li></ul>
-<div class="tags"><span class="tag">JAX</span><span class="tag">Distributed training</span><span class="tag">Sharding</span><span class="tag">Collectives</span><span class="tag">GPU / TPU kernels</span><span class="tag">Roofline analysis</span></div></section>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f6fd">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Open Distributed Training System — distributed compute and performance infrastructure for training and serving open-weight models.">
+<title>Open Distributed Training System | Shaheen Nabi</title></head>
+<body><div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+<nav class="top" aria-label="Page navigation"><a href="../index.html">Shaheen Nabi</a><a href="#architecture">Architecture</a><a href="#roofline">Roofline</a><a href="#runs">Benchmarks</a><a href="#notes">Engineering notes</a><a href="#roadmap">Roadmap</a></nav>
+
+<header class="ph">
+  <span class="chip">Ongoing development</span>
+  <h1>Open Distributed Training System</h1>
+  <p class="lede">The distributed compute and performance stack for training and serving open-weight models, built from first principles and measured at every layer.</p>
+  <div class="chips"><a class="btn pri" href="https://github.com/shaheennabi/open-distributed-training-framework">View source on GitHub</a><a class="btn" href="../index.html">Back to portfolio</a></div>
+  <!-- EDIT: update the four values below -->
+  <dl class="glance"><div><dt>Status</dt><dd>Active development</dd></div><div><dt>Framework</dt><dd>JAX</dd></div><div><dt>Focus</dt><dd>Sharding · collectives · kernels</dd></div><div><dt>Hardware</dt><dd>GPU and TPU</dd></div></dl>
+</header>
+
+<h2>Overview</h2>
+<div class="prose">
+  <p class="big">An open effort to understand, implement, benchmark, and optimize the systems behind large-scale model training.</p>
+  <p>The project connects distributed computing fundamentals with accelerator programming and end-to-end performance engineering. Current development focuses on JAX sharding, device meshes, collective communication, and performance modeling, with the longer-term goal of a distributed transformer training stack. It is also the performance layer for the open post-training system.</p>
+  <!-- EDIT: add motivation and what you measured first -->
+  <span class="todo">Design goals and motivation: details coming</span>
+</div>
+
+<h2 id="architecture">Architecture</h2>
+<p class="prose">Select a layer to see what it covers.</p>
+<div class="flow" role="tablist">
+  <button role="tab" aria-selected="true" data-p="s1">Model workload</button><button role="tab" aria-selected="false" data-p="s2">Sharding &amp; parallelism</button><button role="tab" aria-selected="false" data-p="s3">Collectives</button><button role="tab" aria-selected="false" data-p="s4">Accelerator kernels</button><button role="tab" aria-selected="false" data-p="s5">Profiling</button>
+</div>
+<!-- EDIT: one panel per layer. Change the chip class to built / early / dev. -->
+<div class="panel" id="s1"><h3>Model workload <span class="chip dev">In development</span></h3><p>The transformer training step that every other layer exists to make faster.</p><span class="todo">Model definition, FLOP and memory accounting: details coming</span></div>
+<div class="panel" id="s2" hidden><h3>Sharding and parallelism <span class="chip early">Early</span></h3><p>JAX device meshes and sharding, with data and tensor parallelism across devices.</p><span class="todo">Mesh layout, partition specs, trade-offs: details coming</span></div>
+<div class="panel" id="s3" hidden><h3>Collective communication <span class="chip early">Early</span></h3><p>Collective operations, communication patterns, synchronization, and data movement between devices.</p><span class="todo">All-reduce, all-gather, reduce-scatter measurements: details coming</span></div>
+<div class="panel" id="s4" hidden><h3>Accelerator kernels <span class="chip dev">In development</span></h3><p>GPU and TPU programming: tiled computation, memory hierarchies, and kernel optimization.</p><span class="todo">Kernel designs, tiling choices, benchmarks: details coming</span></div>
+<div class="panel" id="s5" hidden><h3>Profiling and performance modeling <span class="chip dev">In development</span></h3><p>Roofline analysis, profiling, and benchmarking to find the bottleneck before optimizing it.</p><span class="todo">Profiling workflow and case studies: details coming</span></div>
+
+<h2 id="roofline">Reading the roofline</h2>
+<div class="g2">
+<figure class="fig"><div class="box"><svg viewBox="0 0 320 180" role="img" aria-label="Roofline sketch: performance rises with arithmetic intensity until it hits the compute ceiling"><path d="M30 150H300M30 150V15" stroke="#15183b" stroke-width="1.5" fill="none"/><path d="M30 150L170 40H300" stroke="#6c4bff" stroke-width="3" fill="none"/><circle cx="95" cy="99" r="6" fill="#ff5c93"/><circle cx="245" cy="40" r="6" fill="#14c9d6"/><g font-family="sans-serif" font-size="11" fill="#575e8a"><text x="50" y="125">memory-bound</text><text x="215" y="30">compute-bound</text><text x="150" y="168">arithmetic intensity</text></g></svg></div><figcaption>Conceptual sketch. Replace with your measured roofline.</figcaption></figure>
+<div><h3>Why start here</h3><p>Every kernel or sharding change is placed against the memory and compute ceilings first. That tells us which resource to attack and how much headroom is left.</p></div>
+</div>
+
+<h2 id="runs">Benchmarks</h2>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Hardware</th><th>Metric</th><th>Result</th><th>Notes</th></tr>
+<!-- EDIT: copy a row for each benchmark -->
+<tr><td>JAX mesh and sharding</td><td class="m">Add hardware</td><td class="m">Add metric</td><td class="m">Add result</td><td class="m">Add link</td></tr>
+</table></div>
+
+<h2 id="notes">Engineering notes</h2>
+<!-- EDIT: profiling stories and design decisions. Duplicate a div. -->
+<div class="g2">
+<div><h3>Bottlenecks found</h3><p>Where time and bandwidth actually went, with traces.</p></div>
+<div><h3>Design decisions</h3><p>Parallelism and memory trade-offs, and why.</p></div>
+<div><h3>Reproduce it</h3><p>Setup and commands live in the <a href="https://github.com/shaheennabi/open-distributed-training-framework">repository</a>.</p></div>
+<div><h3>Videos</h3><p>Walkthroughs of real engineering bottlenecks on the <a href="../index.html#about">home page</a>.</p></div>
+</div>
+
+<h2 id="roadmap">Roadmap</h2>
+<div class="road">
+<div><h3>Now</h3><ul><li>JAX sharding and device meshes</li><li>Collective communication</li><li>Performance modeling</li></ul></div>
+<div><h3>Next</h3><ul><li>GPU and TPU kernel development</li><li>Reusable benchmarks and profiling workflows</li></ul></div>
+<div><h3>Later</h3><ul><li>Distributed transformer training from first principles</li><li>Integration with the open post-training and RL stack</li></ul></div>
+</div>
+
+<div class="pn"><a class="btn" href="../open-posttraining/index.html">Previous project: Open Post-Training System</a><a class="btn pri" href="../index.html">Back to portfolio</a></div>
 <footer>Open Distributed Training System · Built by <a href="https://shaheennabi.github.io/">Shaheen Nabi</a> · <a href="https://github.com/shaheennabi/open-distributed-training-framework">GitHub repository</a></footer>
-</main></body></html>
+</div><script src="../assets/site.js"></script></body></html>

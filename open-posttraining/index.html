@@ -1,47 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f6fd">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
 <meta name="description" content="Open Post-Training System — infrastructure for advancing open-weight models through reinforcement learning and long-horizon agent training.">
-<title>Open Post-Training System | Shaheen Nabi</title>
-<style>
-:root{color-scheme:light;--bg:#fbfbfa;--ink:#20242b;--muted:#626b78;--line:#e6e8ec;--accent:#7650c8;--soft:#f1ecfb;--max:820px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Georgia,"Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:42px 22px 72px}
-nav{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:64px;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}nav .links{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--muted)}
-.kicker{font:12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
-h1,h2,h3,.button,.tag,.flow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}h1{font-size:clamp(36px,7vw,58px);line-height:1.06;letter-spacing:-.045em;margin:14px 0 18px;max-width:700px}
-.lede{font-size:20px;line-height:1.55;color:#454d59;max-width:720px;margin:0 0 26px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
-.button{display:inline-block;padding:10px 15px;border:1px solid var(--line);border-radius:7px;font-size:13px;font-weight:650;color:var(--ink)}.button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.status{display:inline-flex;align-items:center;gap:8px;border:1px solid #ded5f1;background:var(--soft);color:#6241a5;border-radius:99px;padding:6px 11px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.dot{width:7px;height:7px;border-radius:50%;background:#8a65d5}
-.rule{height:1px;background:var(--line);margin:42px 0}h2{font-size:20px;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:15px;margin:0 0 6px}p{margin:0 0 14px}.muted{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.card{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff}.card p{font-size:15px;color:var(--muted);margin:0}
-.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}.step{padding:9px 11px;background:#fff;border:1px solid var(--line);border-radius:7px;font-size:12px;font-weight:600}.arrow{color:#9aa1aa;font-size:14px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tag{font-size:12px;color:#4f5662;background:#f1f2f4;border-radius:5px;padding:5px 8px}ul{padding-left:20px;margin:10px 0 0}li{padding:3px 0}
-footer{border-top:1px solid var(--line);margin-top:56px;padding-top:18px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}
-@media(max-width:600px){.wrap{padding-top:26px}nav{margin-bottom:46px;align-items:flex-start}.grid{grid-template-columns:1fr}.lede{font-size:18px}}
-</style></head>
-<body><main class="wrap">
-<nav><a href="/">← Shaheen Nabi</a><div class="links"><a href="#overview">Overview</a><a href="#system">System</a><a href="#work">Research</a></div></nav>
-<header><div class="kicker">Open research &amp; engineering project</div><h1>Open Post-Training System</h1>
-<p class="lede">Building the infrastructure to train and advance open-weight models through reinforcement learning on long-horizon coding and agentic tasks.</p>
-<span class="status"><span class="dot"></span> Ongoing development</span>
-<div class="actions"><a class="button primary" href="https://github.com/shaheennabi/open-posttraining-system">View source on GitHub ↗</a><a class="button" href="/">Back to portfolio</a></div></header>
-<div class="rule"></div>
-<section id="overview"><h2>Overview</h2>
-<p>This project brings the post-training workflow into an extensible system: generating and executing agent rollouts, verifying outcomes, updating models, and evaluating capability improvements. The emphasis is on reproducible experiments and infrastructure that supports increasingly long and complex tasks.</p>
-<p class="muted">The repository already contains model and evaluation components, reasoning experiments, and early RL training work. Long-horizon agent training and distributed RL infrastructure are active development directions.</p></section>
-<div class="rule"></div>
-<section id="system"><h2>System components</h2>
-<div class="flow"><span class="step">Task &amp; environment</span><span class="arrow">→</span><span class="step">Rollout generation</span><span class="arrow">→</span><span class="step">Verification</span><span class="arrow">→</span><span class="step">RL training</span><span class="arrow">→</span><span class="step">Evaluation</span></div>
-<div class="grid">
-<article class="card"><h3>Agent environments</h3><p>Long-horizon coding and tool-use tasks with controlled execution, state, and interaction traces.</p></article>
-<article class="card"><h3>Rollout &amp; orchestration</h3><p>Generate, schedule, collect, and manage trajectories for distributed RL experiments.</p></article>
-<article class="card"><h3>Verifiers &amp; evaluation</h3><p>Check task outcomes, localize failures, and measure progress across multi-step trajectories.</p></article>
-<article class="card"><h3>Training &amp; inference</h3><p>Connect policy updates, model execution, and evaluation in a reusable post-training pipeline.</p></article></div></section>
-<div class="rule"></div>
-<section id="work"><h2>Current research directions</h2><ul>
-<li>Training open-weight models on long-horizon coding and agentic tasks.</li><li>Building reliable rollout, environment, verifier, and evaluation infrastructure.</li><li>Scaling distributed RL workloads and improving end-to-end training throughput.</li><li>Studying failures in context retention, planning, state tracking, and execution.</li></ul>
-<div class="tags"><span class="tag">Reinforcement learning</span><span class="tag">Long-horizon agents</span><span class="tag">Distributed RL</span><span class="tag">Verifiers</span><span class="tag">Evaluation</span><span class="tag">Open-weight models</span></div></section>
+<title>Open Post-Training System | Shaheen Nabi</title></head>
+<body><div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+<nav class="top" aria-label="Page navigation"><a href="../index.html">Shaheen Nabi</a><a href="#architecture">Architecture</a><a href="#runs">Experiments</a><a href="#figures">Training dynamics</a><a href="#notes">Engineering notes</a><a href="#roadmap">Roadmap</a></nav>
+
+<header class="ph">
+  <span class="chip">Ongoing development</span>
+  <h1>Open Post-Training System</h1>
+  <p class="lede">The full RL stack for advancing open-weight models on long-horizon coding and agentic tasks, from orchestration to evaluation.</p>
+  <div class="chips"><a class="btn pri" href="https://github.com/shaheennabi/open-posttraining-system">View source on GitHub</a><a class="btn" href="../index.html">Back to portfolio</a></div>
+  <!-- EDIT: update the four values below -->
+  <dl class="glance"><div><dt>Status</dt><dd>Active development</dd></div><div><dt>Stack</dt><dd>PyTorch · TRL · vLLM · SGLang</dd></div><div><dt>Current runs</dt><dd>Qwen3-0.6B · GRPO</dd></div><div><dt>Evaluation</dt><dd>MATH-500</dd></div></dl>
+</header>
+
+<h2>Overview</h2>
+<div class="prose">
+  <p class="big">Post-training as one extensible system: generate and execute agent rollouts, verify outcomes, update the model, and measure what improved.</p>
+  <p>The emphasis is on reproducible experiments and on infrastructure that keeps working as tasks get longer and more complex. The repository already contains model and evaluation components, reasoning experiments, and early RL training work. Long-horizon agent training and distributed RL infrastructure are active development directions.</p>
+  <!-- EDIT: add motivation, design goals, and what makes this different from existing frameworks -->
+  <span class="todo">Design goals and motivation: details coming</span>
+</div>
+
+<h2 id="architecture">Architecture</h2>
+<p class="prose">Select a stage to see what it does and where it stands.</p>
+<div class="flow" role="tablist">
+  <button role="tab" aria-selected="true" data-p="s1">Orchestration</button><button role="tab" aria-selected="false" data-p="s2">Rollouts</button><button role="tab" aria-selected="false" data-p="s3">Environments</button><button role="tab" aria-selected="false" data-p="s4">Verifiers</button><button role="tab" aria-selected="false" data-p="s5">Training</button><button role="tab" aria-selected="false" data-p="s6">Inference</button><button role="tab" aria-selected="false" data-p="s7">Evaluation</button>
+</div>
+<!-- EDIT: one panel per stage. Change the chip class to built / early / dev and rewrite the text. -->
+<div class="panel" id="s1"><h3>Distributed orchestration <span class="chip dev">In development</span></h3><p>Schedules, collects, and manages trajectories across workers for distributed RL experiments.</p><span class="todo">Interfaces, scheduling design, failure handling: details coming</span></div>
+<div class="panel" id="s2" hidden><h3>Rollout generation <span class="chip dev">In development</span></h3><p>Generates trajectories with the current policy, using vLLM and SGLang for inference.</p><span class="todo">Throughput, batching, off-policy lag: details coming</span></div>
+<div class="panel" id="s3" hidden><h3>Sandboxed environments <span class="chip dev">In development</span></h3><p>Long-horizon coding and tool-use tasks with controlled execution, state, and interaction traces.</p><span class="todo">Sandbox design, task format, isolation: details coming</span></div>
+<div class="panel" id="s4" hidden><h3>Verifiers <span class="chip dev">In development</span></h3><p>Check task outcomes, localize failures, and score progress across multi-step trajectories.</p><span class="todo">Verifier types, reward design, hacking tests: details coming</span></div>
+<div class="panel" id="s5" hidden><h3>RL training <span class="chip early">Early</span></h3><p>Policy updates with GRPO, currently on Qwen3-0.6B.</p><span class="todo">Objective, hyperparameters, stability notes: details coming</span></div>
+<div class="panel" id="s6" hidden><h3>Inference <span class="chip dev">In development</span></h3><p>Serves the policy for rollouts and evaluation, and connects model execution to the training loop.</p><span class="todo">Weight sync, serving configuration: details coming</span></div>
+<div class="panel" id="s7" hidden><h3>Evaluation <span class="chip built">In repository</span></h3><p>Evaluation components, with MATH-500 as the current benchmark.</p><span class="todo">Harness design, metrics, long-horizon evals: details coming</span></div>
+
+<h2 id="runs">Experiments</h2>
+<!-- EDIT: add a new .tbl block per run. Confirm the base model name in the first row. -->
+<div class="g2">
+<div><h3>GRPO ablation on MATH-500</h3><div class="bars" role="img" aria-label="MATH-500 accuracy: base 64.0 percent, step 5 48.0 percent, step 50 60.0 percent">
+<div><span>Base model</span><i style="width:64%"></i><span>64.0%</span></div>
+<div class="lo"><span>Step 5</span><i style="width:48%"></i><span>48.0%</span></div>
+<div><span>Step 50</span><i style="width:60%"></i><span>60.0%</span></div></div>
+<p>Response length shrank from 303 to about 220 tokens over the run.</p></div>
+<div><h3>What it showed</h3><p>Accuracy dropped to 48.0% at a 5-step checkpoint before recovering to 60.0% at 50 steps. That is evidence that a sparse binary-correctness reward is a weak signal without more steps and better reward shaping.</p><span class="todo" style="margin-top:12px">Config, seeds, reward function: details coming</span></div>
+</div>
+<div class="tbl" style="margin-top:16px"><table>
+<tr><th>Run</th><th>Method</th><th>Benchmark</th><th>Result</th><th>Notes</th></tr>
+<tr><td>GRPO ablation</td><td>GRPO</td><td>MATH-500</td><td>64.0% → 48.0% → 60.0%</td><td class="m">Base, step 5, step 50</td></tr>
+<tr><td class="m">Add run</td><td class="m">Method</td><td class="m">Benchmark</td><td class="m">Result</td><td class="m">Link</td></tr>
+</table></div>
+
+<h2 id="figures">Training dynamics</h2>
+<!-- EDIT: replace the placeholder text inside .box with <img src="/open-posttraining/reward.png" alt="..."> -->
+<div class="g2">
+<figure class="fig"><div class="box">Reward curve</div><figcaption>Mean reward over training steps.</figcaption></figure>
+<figure class="fig"><div class="box">KL divergence</div><figcaption>Drift from the reference policy.</figcaption></figure>
+<figure class="fig"><div class="box">Response length</div><figcaption>Completion length over training.</figcaption></figure>
+<figure class="fig"><div class="box">Throughput</div><figcaption>Rollout and training tokens per second.</figcaption></figure>
+</div>
+
+<h2 id="notes">Engineering notes</h2>
+<!-- EDIT: failures, debugging stories, design decisions. Duplicate a div. -->
+<div class="g2">
+<div><h3>What broke</h3><p>Failures found while training, and how they were diagnosed.</p></div>
+<div><h3>Design decisions</h3><p>Trade-offs in rollout, verifier, and trainer interfaces.</p></div>
+<div><h3>Reproduce it</h3><p>Setup and commands live in the <a href="https://github.com/shaheennabi/open-posttraining-system">repository</a>.</p></div>
+<div><h3>Background reading</h3><p><a href="https://shaheennabi.substack.com/p/intro-to-reinforcement-learning-env">Introduction to Reinforcement Learning Environments</a></p></div>
+</div>
+
+<h2 id="roadmap">Roadmap</h2>
+<div class="road">
+<div><h3>Now</h3><ul><li>GRPO on Qwen3-0.6B</li><li>MATH-500 evaluation</li><li>Rollout, environment, and verifier infrastructure</li></ul></div>
+<div><h3>Next</h3><ul><li>Long-horizon coding and agentic tasks</li><li>Failure analysis: context retention, planning, state tracking, execution</li></ul></div>
+<div><h3>Later</h3><ul><li>Distributed RL at scale</li><li>End-to-end throughput work, with the distributed training system</li></ul></div>
+</div>
+
+<div class="pn"><a class="btn" href="../index.html">Back to portfolio</a><a class="btn pri" href="../open-distributed-system/index.html">Next project: Open Distributed Training System</a></div>
 <footer>Open Post-Training System · Built by <a href="https://shaheennabi.github.io/">Shaheen Nabi</a> · <a href="https://github.com/shaheennabi/open-posttraining-system">GitHub repository</a></footer>
-</main></body></html>
+</div><script src="../assets/site.js"></script></body></html>

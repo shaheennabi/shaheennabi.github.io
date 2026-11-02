@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Open Post-Training System — infrastructure for advancing open-weight models through reinforcement learning and long-horizon agent training.">
+<title>Open Post-Training System | Shaheen Nabi</title>
+<style>
+:root{color-scheme:light;--bg:#fbfbfa;--ink:#20242b;--muted:#626b78;--line:#e6e8ec;--accent:#7650c8;--soft:#f1ecfb;--max:820px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Georgia,"Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:42px 22px 72px}
+nav{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:64px;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}nav .links{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--muted)}
+.kicker{font:12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1,h2,h3,.button,.tag,.flow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}h1{font-size:clamp(36px,7vw,58px);line-height:1.06;letter-spacing:-.045em;margin:14px 0 18px;max-width:700px}
+.lede{font-size:20px;line-height:1.55;color:#454d59;max-width:720px;margin:0 0 26px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
+.button{display:inline-block;padding:10px 15px;border:1px solid var(--line);border-radius:7px;font-size:13px;font-weight:650;color:var(--ink)}.button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.status{display:inline-flex;align-items:center;gap:8px;border:1px solid #ded5f1;background:var(--soft);color:#6241a5;border-radius:99px;padding:6px 11px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.dot{width:7px;height:7px;border-radius:50%;background:#8a65d5}
+.rule{height:1px;background:var(--line);margin:42px 0}h2{font-size:20px;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:15px;margin:0 0 6px}p{margin:0 0 14px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.card{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff}.card p{font-size:15px;color:var(--muted);margin:0}
+.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}.step{padding:9px 11px;background:#fff;border:1px solid var(--line);border-radius:7px;font-size:12px;font-weight:600}.arrow{color:#9aa1aa;font-size:14px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tag{font-size:12px;color:#4f5662;background:#f1f2f4;border-radius:5px;padding:5px 8px}ul{padding-left:20px;margin:10px 0 0}li{padding:3px 0}
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:18px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted)}
+@media(max-width:600px){.wrap{padding-top:26px}nav{margin-bottom:46px;align-items:flex-start}.grid{grid-template-columns:1fr}.lede{font-size:18px}}
+</style></head>
+<body><main class="wrap">
+<nav><a href="/">← Shaheen Nabi</a><div class="links"><a href="#overview">Overview</a><a href="#system">System</a><a href="#work">Research</a></div></nav>
+<header><div class="kicker">Open research &amp; engineering project</div><h1>Open Post-Training System</h1>
+<p class="lede">Building the infrastructure to train and advance open-weight models through reinforcement learning on long-horizon coding and agentic tasks.</p>
+<span class="status"><span class="dot"></span> Ongoing development</span>
+<div class="actions"><a class="button primary" href="https://github.com/shaheennabi/open-posttraining-system">View source on GitHub ↗</a><a class="button" href="/">Back to portfolio</a></div></header>
+<div class="rule"></div>
+<section id="overview"><h2>Overview</h2>
+<p>This project brings the post-training workflow into an extensible system: generating and executing agent rollouts, verifying outcomes, updating models, and evaluating capability improvements. The emphasis is on reproducible experiments and infrastructure that supports increasingly long and complex tasks.</p>
+<p class="muted">The repository already contains model and evaluation components, reasoning experiments, and early RL training work. Long-horizon agent training and distributed RL infrastructure are active development directions.</p></section>
+<div class="rule"></div>
+<section id="system"><h2>System components</h2>
+<div class="flow"><span class="step">Task &amp; environment</span><span class="arrow">→</span><span class="step">Rollout generation</span><span class="arrow">→</span><span class="step">Verification</span><span class="arrow">→</span><span class="step">RL training</span><span class="arrow">→</span><span class="step">Evaluation</span></div>
+<div class="grid">
+<article class="card"><h3>Agent environments</h3><p>Long-horizon coding and tool-use tasks with controlled execution, state, and interaction traces.</p></article>
+<article class="card"><h3>Rollout &amp; orchestration</h3><p>Generate, schedule, collect, and manage trajectories for distributed RL experiments.</p></article>
+<article class="card"><h3>Verifiers &amp; evaluation</h3><p>Check task outcomes, localize failures, and measure progress across multi-step trajectories.</p></article>
+<article class="card"><h3>Training &amp; inference</h3><p>Connect policy updates, model execution, and evaluation in a reusable post-training pipeline.</p></article></div></section>
+<div class="rule"></div>
+<section id="work"><h2>Current research directions</h2><ul>
+<li>Training open-weight models on long-horizon coding and agentic tasks.</li><li>Building reliable rollout, environment, verifier, and evaluation infrastructure.</li><li>Scaling distributed RL workloads and improving end-to-end training throughput.</li><li>Studying failures in context retention, planning, state tracking, and execution.</li></ul>
+<div class="tags"><span class="tag">Reinforcement learning</span><span class="tag">Long-horizon agents</span><span class="tag">Distributed RL</span><span class="tag">Verifiers</span><span class="tag">Evaluation</span><span class="tag">Open-weight models</span></div></section>
+<footer>Open Post-Training System · Built by <a href="https://shaheennabi.github.io/">Shaheen Nabi</a> · <a href="https://github.com/shaheennabi/open-posttraining-system">GitHub repository</a></footer>
+</main></body></html>
